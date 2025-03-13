@@ -1,4 +1,2 @@
-<?php
-echo 'salute'
-
-?>
+<?php get_header(); ?>
+<?php get_footer() ?>
