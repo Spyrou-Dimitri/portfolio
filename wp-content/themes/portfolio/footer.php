@@ -34,7 +34,7 @@
                 <?php endforeach; ?>
             </ul>
         </section>
-        <section class="footer__container__section">
+        <nav class="footer__container__section">
             <h2 class="footer__container__section__title">
                 <?= wp_get_nav_menu_name('header_menu') ?>
             </h2>
@@ -45,7 +45,7 @@
                     </li>
                 <?php endforeach; ?>
             </ul>
-        </section>
+        </nav>
     </div>
 
 </footer>
