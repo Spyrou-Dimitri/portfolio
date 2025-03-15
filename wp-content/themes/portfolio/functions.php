@@ -1,6 +1,8 @@
 <?php
 // Désactiver l'éditeur de texte Gutenberg de Wordpress :
 add_filter('use_block_editor_for_post', '__return_false');
+add_filter( 'use_widgets_block_editor', '__return_false' );
+
 
 //Enregistrer mes menus de navigation
 register_nav_menu('header_menu', 'Navigation principale, le header');
@@ -38,4 +40,19 @@ function dw_get_navigation_links(string $location): array
     return $items;
 }
 
+
+
+add_theme_support('post-thumbnails', ['projects']);
+//Création du post customisé pour mes projets
+register_post_type('projects', [
+    'label' => 'Projets',
+    'description' => 'Les projets que j ai réalisé',
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-airplane',
+    'public' => true,
+    'rewrite' => [
+        'slug' => 'projets',
+    ],
+    'supports' => ['title','excerpt','editor','thumbnail'],
+]);
 
