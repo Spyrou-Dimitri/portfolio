@@ -4,7 +4,7 @@ get_header();
 <section>
     <h2>
         <span>
-            Portfolio
+            Portfoli
         </span>
         Spyrou Dimitri
         <span>
