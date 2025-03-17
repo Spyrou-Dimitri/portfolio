@@ -15,7 +15,7 @@ function pf_asset ($file) : string
     return get_template_directory_uri().'/assets/'.$file;
 }
 
-function dw_get_navigation_links(string $location): array
+function pf_get_navigation_links(string $location): array
 {
     // Pour $location, retrouver le menu.
     $locations = get_nav_menu_locations();
@@ -39,10 +39,15 @@ function dw_get_navigation_links(string $location): array
     // Retourner le tableau de liens formatés
     return $items;
 }
-
-
+//Autoriser l'import des svg pour ACF
+function allow_svg_upload($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg_upload');
 
 add_theme_support('post-thumbnails', ['projects']);
+
 //Création du post customisé pour mes projets
 register_post_type('projects', [
     'label' => 'Projets',
@@ -55,4 +60,18 @@ register_post_type('projects', [
     ],
     'supports' => ['title','excerpt','editor','thumbnail'],
 ]);
+register_post_type('career_path', [
+    'label'=> 'Parcours',
+    'description' => 'Mon parcours jusqu a aujourd hui',
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-airplane',
+    'public' => true,
+    'rewrite' => [
+        'slug'=>'career_path',
+    ],
+    'supports' => ['title','editor'],
+]);
+
+
+
 

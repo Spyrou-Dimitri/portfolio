@@ -22,7 +22,7 @@
         </h2>
         <a class="nav__link" href="#" title="Vers l'accueil">Dimitri S.</a>
         <ul class="nav__container">
-            <?php foreach (dw_get_navigation_links('header_menu') as $link): ?>
+            <?php foreach (pf_get_navigation_links('header_menu') as $link): ?>
                 <li class="nav__container__items">
                     <a href="<?= $link->url ?>" class="nav__container__items__link" title="Vers la page <?= $link->label?>"><?= $link->label?></a>
                 </li>
