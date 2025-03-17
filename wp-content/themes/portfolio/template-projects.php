@@ -36,6 +36,9 @@ get_header() ?>
     <p>
         Bien d'autres à venir
     </p>
+    <p>
+        test
+    </p>
 
 </section>
 
