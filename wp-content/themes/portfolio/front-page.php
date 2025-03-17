@@ -29,8 +29,8 @@ get_header();
         $projects   = new WP_Query( [
             'post_type'     => 'projects',
             'order'         => 'DESC',
+            'orderby'       => 'date',
 
-            'post_per_page' => 3,
         ] );
         if ($projects->have_posts() ): while ( $projects->have_posts() ):$projects->the_post(); ?>
             <article>
@@ -41,7 +41,7 @@ get_header();
                 </h3>
                 <?= get_the_post_thumbnail( size: 'medium'); ?>
                 <p>
-
+                    <?= get_the_excerpt() ?>
                 </p>
             </article>
         <?php
