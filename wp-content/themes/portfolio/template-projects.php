@@ -37,7 +37,7 @@ get_header() ?>
         Bien d'autres à venir
     </p>
     <p>
-        test test test test test
+        test test test test
     </p>
 
 </section>
