@@ -4,7 +4,7 @@ get_header();
 <section>
     <h2>
         <span>
-            Portfoli
+            Portfolio
         </span>
         Spyrou Dimitri
         <span>
@@ -29,7 +29,7 @@ get_header();
         $projects   = new WP_Query( [
             'post_type'     => 'projects',
             'order'         => 'DESC',
-            
+
             'post_per_page' => 3,
         ] );
         if ($projects->have_posts() ): while ( $projects->have_posts() ):$projects->the_post(); ?>
@@ -40,7 +40,9 @@ get_header();
                     <?= get_the_title() ?>
                 </h3>
                 <?= get_the_post_thumbnail( size: 'medium'); ?>
+                <p>
 
+                </p>
             </article>
         <?php
 //on ferme 'la boucle' (The Loop)
@@ -53,5 +55,7 @@ get_header();
 
     </section>
 </div>
+
+
 
 <?= get_footer(); ?>
