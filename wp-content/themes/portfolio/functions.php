@@ -60,17 +60,7 @@ register_post_type('projects', [
     ],
     'supports' => ['title','excerpt','editor','thumbnail'],
 ]);
-register_post_type('career_path', [
-    'label'=> 'Parcours',
-    'description' => 'Mon parcours jusqu a aujourd hui',
-    'menu_position' => 6,
-    'menu_icon' => 'dashicons-airplane',
-    'public' => true,
-    'rewrite' => [
-        'slug'=>'career_path',
-    ],
-    'supports' => ['title','editor'],
-]);
+
 
 
 
