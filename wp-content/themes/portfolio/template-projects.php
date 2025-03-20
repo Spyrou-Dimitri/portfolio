@@ -19,6 +19,11 @@ get_header() ?>
     <h2>
         Tous mes projets
     </h2>
+</section>
+<section>
+    <h2>
+        Mes projets
+    </h2>
     <?php
     $projects   = new WP_Query( [
         'post_type'     => 'projects',
@@ -27,19 +32,18 @@ get_header() ?>
         'post_per_page' => 3,
     ] );
     if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
-    <article>
-        <?= get_the_post_thumbnail(size: 'medium')?>
-        <h3> <?= get_the_title() ?></h3>
-        <p><?= get_the_excerpt() ?></p>
-    </article>
+        <article>
+            <?= get_the_post_thumbnail(size: 'medium')?>
+            <h3> <?= get_the_title() ?></h3>
+            <p><?= get_the_excerpt() ?></p>
+        </article>
     <?php endwhile; endif; ?>
     <p>
         Bien d'autres à venir
     </p>
-    <p>
-        test test test test
-    </p>
-
 </section>
+
+
+
 
 <?php get_footer() ?>
