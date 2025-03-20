@@ -42,6 +42,7 @@ get_header();
             <?php if (have_rows('step-list')) : ?>
                 <?php while (have_rows('step-list')) : the_row(); ?>
                     <section>
+                        <img src="" alt="">
                         <h3><?= get_sub_field('step-title') ?></h3>
                         <p><?= get_sub_field('step-desc') ?></p>
                     </section>
