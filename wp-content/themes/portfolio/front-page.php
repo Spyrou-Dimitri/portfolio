@@ -31,10 +31,10 @@ get_header();
             'order'         => 'DESC',
             'orderby'       => 'date',
 
-        ] );
+        ]);
         if ($projects->have_posts() ): while ( $projects->have_posts() ):$projects->the_post(); ?>
             <article>
-                <a href="">
+                <a href="<?= get_the_permalink() ?>"> test
                 </a>
                 <h3>
                     <?= get_the_title() ?>

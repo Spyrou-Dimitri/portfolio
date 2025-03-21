@@ -33,6 +33,7 @@ get_header() ?>
     ] );
     if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
         <article>
+            <a href="<?= get_the_permalink() ?>">test</a>
             <?= get_the_post_thumbnail(size: 'medium')?>
             <h3> <?= get_the_title() ?></h3>
             <p><?= get_the_excerpt() ?></p>
