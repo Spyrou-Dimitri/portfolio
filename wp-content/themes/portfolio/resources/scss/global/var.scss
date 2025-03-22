@@ -5,8 +5,28 @@ $wood: #D8B384;
 $red: #5F021F;
 
 //Fonts
-$playFair: "Playfair Display", Helvetica, serif;
-$poppins-regular: 'Poppins regular', Helvetica, sans-serif;
-$poppins-italic: 'Poppins regular', Helvetica, sans-serif;
+$playfair: "Playfair", Merriweather, serif;
+$poppins-regular: 'Poppins-Regular', Helvetica, sans-serif;
+$poppins-italic: 'Poppins-Italic', Helvetica, sans-serif;
 
 //Screens
+
+//font-face
+@font-face {
+    font-family: 'Playfair';
+    src: url('../../fonts/Playfair-Regular.ttf');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Poppins-regular';
+    src: url('../../fonts/Playfair-Regular.ttf');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Poppins-Italic';
+    src: url('../../fonts/Poppins-Italic.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url("../../fonts/Playfair-Regular.ttf");
+}
