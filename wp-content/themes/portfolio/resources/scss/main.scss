@@ -2,7 +2,10 @@
 @import "global/reset";
 @import "global/fonts";
 @import "global/var";
-@import "global/";
+@import "global/global";
 
 //Import Components
 @import "components/header";
+
+//Import pages
+@import "pages/about";

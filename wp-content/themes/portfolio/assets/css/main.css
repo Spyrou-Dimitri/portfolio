@@ -73,7 +73,133 @@ table {
   font-family: "Impact";
   src: url("../../fonts/Impact/Impact.ttf");
 }
-h1 {
+.sro {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header__containner {
+  background-color: #FFF5E8;
+  padding: 22px 25px 0;
+  top: 0;
+  left: 0;
+}
+
+.nav {
+  display: flex;
+  z-index: 0;
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 40px;
+  margin: auto;
+  padding-bottom: 22px;
+  border-bottom: 2px solid #5F021F;
+}
+.nav__link {
+  position: relative;
+  font-family: "Playfair Display";
+  color: #5F021F;
+  font-size: 2rem;
+  z-index: 2;
+}
+.nav #burger__button {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+}
+.nav #burger__button:checked ~ .nav__container {
+  transform: translateX(0);
+  transition: 0.1s;
+}
+.nav .burger__wrapper {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: absolute;
+  background-color: #D8B384;
+  padding: 10px;
+  border-radius: 20px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.nav .burger__wrapper__lines {
+  border-radius: 20px;
+  background-color: #5F021F;
+  display: block;
+  content: "";
+  width: 20px;
+  min-height: 4px;
+}
+.nav__container {
+  z-index: 0;
+  background-color: #FFF5E8;
+  top: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  min-height: 100vh;
+  transform: translateX(100%);
+  transition: 0.1s;
+  padding-top: 10em;
+}
+.nav__container__items__link {
+  font-size: 2rem;
+  color: #5F021F;
+  padding: 16px 22px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+.nav__container__items__link:hover {
+  transition: 0.3s ease-in-out;
+  color: #FFF5E8;
+  background-color: #5F021F;
+}
+
+.up {
+  transform-origin: left;
+}
+
+.down {
+  transform-origin: left;
+}
+
+.nav:has(#burger__button:checked) .burger__wrapper .up {
+  transform: rotate(37deg);
+}
+
+.nav:has(#burger__button:checked) .burger__wrapper .down {
+  transform: rotate(-37deg);
+}
+
+@media (width > 1000px) {
+  .burger__wrapper {
+    background-color: #5F021F;
+  }
+}
+h2 {
   color: red;
-  font-family: "Poppins italic";
 }
