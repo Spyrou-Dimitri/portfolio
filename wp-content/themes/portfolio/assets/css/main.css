@@ -108,8 +108,6 @@ a {
 .header__containner {
   background-color: #FFF5E8;
   padding: 22px 25px 0;
-  top: 0;
-  left: 0;
 }
 
 .nav {
@@ -219,6 +217,46 @@ a {
     background-color: #5F021F;
   }
 }
+footer {
+  background-color: #FFF5E8;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 25px 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer__container__section {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  line-height: 1.5;
+  color: #5F021F;
+  align-items: flex-start;
+}
+.footer__container__section__title {
+  font-family: "Playfair", Merriweather, serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+.footer__container__section .contact__link {
+  font-family: "Playfair", Merriweather, serif;
+  color: #FFF5E8;
+  padding: 16px 22px;
+  border-radius: 10px;
+  background-color: #5F021F;
+  font-size: 20px;
+}
+.footer__container__section__list__items__links {
+  color: #5F021F;
+}
+.footer__container__section__list__items__links:hover {
+  border-bottom: 1px solid #5F021F;
+}
+
 .hero {
   padding: 0 25px;
   background-color: #FFF5E8;
@@ -230,7 +268,6 @@ a {
 }
 .hero .container__topBillards__cue img {
   width: 500px;
-  overflow: hidden;
 }
 .hero__title {
   display: flex;
@@ -296,10 +333,12 @@ a {
   font-family: Playfair;
   font-size: 25px;
   color: #5F021F;
+  padding-bottom: 20px;
 }
 .hero__scroll:after {
-  content: "";
+  content: url("/wp-content/themes/portfolio/resources/img/arrow.svg");
   display: block;
+  margin: auto;
   width: 35px;
   height: 9px;
 }
@@ -338,7 +377,6 @@ a {
   gap: 20px;
   color: #5F021F;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: 0.1s;
 }
 .lastProjects__container__article__link {
   position: absolute;
@@ -367,8 +405,9 @@ a {
   padding: 16px 22px;
   background-color: #5F021F;
   border-radius: 10px;
-}
-.lastProjects__container__article:hover {
   transition: 0.1s;
-  transform: translateY(-20px);
+}
+.lastProjects__container__article__cta:hover {
+  transition: 0.1s;
+  transform: scale(1.2);
 }

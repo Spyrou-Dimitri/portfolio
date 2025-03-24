@@ -56,9 +56,7 @@ get_header();
         ]);
         if ($projects->have_posts()): while ($projects->have_posts()):$projects->the_post(); ?>
             <article class="lastProjects__container__article">
-                <a href="<?= get_the_permalink() ?>" class="lastProjects__container__article__link">
-                    <span class="sro">Découvrir le projet <?= get_the_title() ?></span>
-                </a>
+
                 <?= get_the_post_thumbnail(size: 'medium'); ?>
                 <h3 class="lastProjects__container__article__title">
                     <?= get_the_title() ?>

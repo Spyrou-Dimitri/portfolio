@@ -17,7 +17,6 @@
 
             img {
                 width: 500px;
-                overflow: hidden;
             }
 
         }
@@ -98,11 +97,15 @@
         font-family: Playfair;
         font-size: 25px;
         color: $red;
+        padding-bottom:20px ;
 
-        &:after {content: "";
+        &:after {
+            content: url("/wp-content/themes/portfolio/resources/img/arrow.svg");
             display: block;
+            margin: auto;
             width: 35px;
             height: 9px;
+
         }
     }
 
@@ -144,7 +147,6 @@
             gap: 20px;
             color: $red;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            transition: 0.1s;
 
 
             &__link {
@@ -177,10 +179,12 @@
                 padding: 16px 22px;
                 background-color: $red;
                 border-radius: 10px;
-            }
-            &:hover {
                 transition: 0.1s;
-                transform: translateY(-20px);
+
+                &:hover {
+                    transition: 0.1s;
+                    transform: scale(1.2);
+                }
             }
         }
 

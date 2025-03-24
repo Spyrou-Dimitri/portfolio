@@ -1,0 +1,48 @@
+footer {
+    background-color: $bg;
+}
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 25px 50px;
+    max-width: 1200px;
+    margin: auto;
+    &__section{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        line-height: 1.5;
+        color: $red;
+        align-items: flex-start;
+
+        &__title {
+            font-family: $playfair;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .contact {
+
+            &__link {
+                font-family: $playfair;
+                color: $bg;
+                padding:16px 22px;
+                border-radius: 10px;
+                background-color: $red;
+                font-size: 20px;
+            }
+        }
+        &__list {
+            &__items {
+
+                &__links {
+                    color: $red;
+
+                    &:hover {
+                        border-bottom: 1px solid $red;
+                    }
+                }
+            }
+        }
+    }
+}
