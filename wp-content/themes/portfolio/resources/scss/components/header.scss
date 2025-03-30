@@ -6,22 +6,25 @@
 .nav {
     display: flex;
     z-index: 0;
+    align-items: center;
     position: relative;
     max-width: 1200px;
     width: 100%;
-    min-height: 40px;
     margin: auto;
     padding-bottom: 22px;
     border-bottom: 2px solid $red;
 
-
+    @media (min-width: $medium-screen) {
+        padding-bottom: 11px;
+        justify-content: space-between;
+    }
 
     &__link {
         position: relative;
-        font-family: "Playfair";
+        font-family: $playfair;
         font-weight: 700;
         color: $red;
-        font-size: 2rem;
+        font-size: 1.8rem;
         z-index: 2;
     }
     #burger__button {
@@ -34,7 +37,9 @@
         margin: 0;
         appearance: none;
         cursor: pointer;
-
+        @media (min-width: $medium-screen) {
+            display: none;
+        }
 
         &:checked ~.nav__container {
             transform: translateX(0);
@@ -54,6 +59,9 @@
         top: 0;
         right: 0;
         cursor: pointer;
+        @media (min-width: $medium-screen) {
+            display: none;
+        }
 
         &__lines {
             border-radius: 20px;
@@ -81,17 +89,25 @@
         transform: translateX(100%);
         transition: .1s;
         padding-top: 10em;
-
-
+        @media (min-width: $medium-screen) {
+            flex-direction: row;
+            position: relative;
+            transform: none;
+            width: auto;
+            padding-top: 0;
+            min-height: 0;
+        }
         &__items {
-
             &__link {
+                display: inline-block;
                 font-size: 2rem;
                 color: $red;
                 padding: 16px 22px;
                 border-radius: 10px;
                 transition: .3s ease-in-out;
-
+            @media (min-width: $medium-screen) {
+                font-size: 1.4rem;
+            }
                 &:hover {
                     transition: .3s ease-in-out;
 

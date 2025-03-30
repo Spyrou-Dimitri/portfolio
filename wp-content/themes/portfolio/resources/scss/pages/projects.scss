@@ -1,0 +1,122 @@
+.bg {
+    background-color: $bg;
+
+}
+
+.projectsHome {
+    padding: 44px 25px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 44px;
+
+
+    &__title {
+        font-family: $playfair;
+        font-weight: 700;
+        text-align: center;
+        font-size: 49px;
+        color: $red;
+        @media (min-width: $medium-screen) {
+            font-size: 65px;
+        }
+    }
+
+    &__container {
+        display: grid;
+        max-width: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); // Ajuste la largeur minimale
+        gap: 20px;
+
+        &__link {
+            text-align: center;
+            font-size: 1.25rem;
+            padding: 0.8rem 1.2rem;
+            min-width: 100px;
+            color: white;
+            background-color: $red;
+            border-radius: 10px;
+        }
+    }
+}
+
+.projectsList {
+    padding: 44px 25px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    &__title {
+        font-size: 38px;
+        font-weight: 700;
+        color: $red;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 50px;
+        @media (min-width: $medium-screen) {
+            flex-direction: row;
+
+        }
+        @media (min-width: $wide-screen) {
+            flex-wrap: nowrap;
+        }
+        &__items {
+            gap: 20px;
+            color: $red;
+            display: flex;
+            flex-direction: column;
+            background-color: $bg;
+            align-items: center;
+            border-radius: 10px;
+            padding: 50px 35px;
+            @media (min-width: $medium-screen) {
+                width: 37%;
+            }
+            @media (min-width: $wide-screen) {
+                width: auto;
+            }
+
+            &__title {
+                font-family: $playfair;
+                font-weight: bold;
+                font-size: 25px;
+
+            }
+
+            &__paragraph {
+                font-family: $poppins-regular;
+                line-height: 1.5;
+                text-align: center;
+            }
+
+            &__link {
+                font-family: $playfair;
+                font-size: 20px;
+                color: white;
+                padding: 16px 22px;
+                background-color: $red;
+                border-radius: 10px;
+                transition: 0.1s;
+
+                &:hover {
+                    transition: 0.1s;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    &__other {
+        font-family: $poppins-regular;
+        font-style: italic;
+        font-weight: 400;
+        text-align: center;
+    }
+}

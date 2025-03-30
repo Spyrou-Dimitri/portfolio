@@ -4,11 +4,11 @@ get_header();
 <section class="hero">
     <div class="container__topBillards">
         <div class="container__topBillards__ball">
-            <img src="wp-content/themes/portfolio/resources/img/ball8.svg" alt="La bille noir du billard" width="100"
+            <img src="/wp-content/themes/portfolio/resources/img/ball8.svg" alt="La bille noir du billard" width="100"
                  height="100">
         </div>
         <div class="container__topBillards__cue">
-            <img src="wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard">
+            <img src="/wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard">
         </div>
     </div>
     <h2 class="hero__title">
@@ -30,10 +30,10 @@ get_header();
     </div>
     <div class="container__botBillards">
         <div class="container__botBillards__cue">
-            <img src="wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard">
+            <img src="/wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard">
         </div>
         <div class="container__botBillards__ball">
-            <img src="wp-content/themes/portfolio/resources/img/ball8.svg" alt="La bille noir du billard" width="100"
+            <img src="/wp-content/themes/portfolio/resources/img/ball8.svg" alt="La bille noir du billard" width="100"
                  height="100">
         </div>
 
@@ -56,8 +56,7 @@ get_header();
         ]);
         if ($projects->have_posts()): while ($projects->have_posts()):$projects->the_post(); ?>
             <article class="lastProjects__container__article">
-
-                <?= get_the_post_thumbnail(size: 'medium'); ?>
+                    <?= get_the_post_thumbnail(attr: ['class' => 'resizeImg']) ?>
                 <h3 class="lastProjects__container__article__title">
                     <?= get_the_title() ?>
                 </h3>

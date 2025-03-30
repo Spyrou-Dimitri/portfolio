@@ -21,7 +21,7 @@
             <h2 class="nav__title sro">
                 <?= wp_get_nav_menu_name("header_menu") ?>
             </h2>
-            <a class="nav__link" href="#" title="Vers l'accueil">Dimitri S.</a>
+            <a class="nav__link" href="#" title="Vers l'accueil">Dim</a>
             <input type="checkbox" name="burger" id="burger__button">
             <label for="burger__button" class="sro">Menu dépliant</label>
             <div class="burger__wrapper">

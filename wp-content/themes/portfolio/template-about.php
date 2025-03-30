@@ -2,23 +2,25 @@
 get_header();
 
 ?>
-<section class="hero">
+<section class="about">
     <?php if (have_posts()): while (have_posts()):
     the_post(); ?>
-    <h2 class="hero__title">
+    <h2 class="about__title">
         <?= get_field('about-title'); ?>
     </h2>
-    <img src="<?= get_field('about-img'); ?>" alt="Photo de moi" width="30%">
-</section>
-    <section>
-        <h2>
+    <article class="about__presentation">
+        <h3 class="about__presentation">
             <?= get_field('presentation-title'); ?>
-        </h2>
-        <p>
+
+        </h3>
+        <p class="about__title">
             <?= get_field('description'); ?>
         </p>
-    </section>
-
+        <div class="about__container">
+            <img src="<?= get_field('about-img'); ?>" alt="Photo de moi" class="about__container__img">
+        </div>
+    </article>
+</section>
 <section class="career">
     <h2 class="career title">
         Mon parcours
