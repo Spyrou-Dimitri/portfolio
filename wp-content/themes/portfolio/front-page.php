@@ -63,7 +63,8 @@ get_header();
                 <p class="lastProjects__container__article__paragraph">
                     <?= get_the_excerpt() ?>
                 </p>
-                <a href="<?= get_the_permalink() ?>" title="Découvrir le projet <?= get_the_title()?>" class="lastProjects__container__article__cta">Voir le projet</a>
+                <a href="<?= get_the_permalink() ?>" title="Découvrir le projet <?= get_the_title()?>" class="lastProjects__container__article__cta">
+                    <span>Voir le projet</span></a>
             </article>
         <?php
 //on ferme 'la boucle' (The Loop)

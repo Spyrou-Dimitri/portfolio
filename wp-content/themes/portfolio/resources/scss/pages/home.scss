@@ -109,10 +109,24 @@
         }
     }
     &__scroll {
+
+        z-index: 0;
         text-align: center;
         font-family: $playfair;
         font-size: 25px;
         color: $red;
+        animation: upDown  1s ease-in-out infinite;
+        @keyframes upDown {
+            0% {
+                transform: translateY(10px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(10px);
+            }
+        }
 
         &:after {
             content: "";
@@ -172,6 +186,7 @@
             gap: 20px;
             color: $red;
             box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
             @media (min-width: $medium-screen) {
                 width: 37%;
             }
@@ -196,7 +211,6 @@
                 font-size: 25px;
             }
             &__img {
-
             }
             &__paragraph {
                 font-family: $poppins-regular;
@@ -204,6 +218,8 @@
                 text-align: center;
             }
             &__cta {
+                display: block;
+                position: relative;
                 font-family: $playfair;
                 font-size: 20px;
                 color: white;
@@ -211,11 +227,42 @@
                 background-color: $red;
                 border-radius: 10px;
                 transition: 0.1s;
+                overflow: hidden;
+                min-height: 20px;
+                border: 2px solid $red;
+                span {
+                    display: block;
+                    position: relative;
+                    z-index: 1;
+                    transition: transform 0.3s ease-in-out;
 
-                &:hover {
-                    transition: 0.1s;
-                    transform: scale(1.2);
+                    &:hover {
+                        transition: transform 0.3s ease-in-out;
+                        color: $red;
+                    }
                 }
+
+                &:before {
+                    content: "";
+                    width: 101%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: $bg   ;
+                    transform: translateX(100%);
+                    transition: transform 0.2s ease-in-out;
+
+                }
+                &:hover::before {
+                    animation: .2s ease-in-out;
+                    transform: translateX(0);
+                }
+                &:hover {
+                    color: $red;
+                    border: 2px solid $red;
+                }
+
             }
         }
 

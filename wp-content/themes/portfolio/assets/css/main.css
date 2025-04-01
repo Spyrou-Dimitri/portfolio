@@ -111,6 +111,7 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 10px;
 }
 
 .header__containner {
@@ -169,7 +170,7 @@ a {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   position: absolute;
   background-color: #D8B384;
   padding: 10px;
@@ -188,8 +189,8 @@ a {
   background-color: #5F021F;
   display: block;
   content: "";
-  width: 20px;
-  min-height: 4px;
+  width: 22px;
+  min-height: 3px;
 }
 .nav__container {
   z-index: 0;
@@ -237,19 +238,28 @@ a {
 }
 
 .up {
-  transform-origin: left;
+  transition: 0.2s ease-in-out;
+}
+
+.middle {
+  transition: 0.2s ease-in-out;
 }
 
 .down {
-  transform-origin: left;
+  transition: 0.2s ease-in-out;
 }
 
 .nav:has(#burger__button:checked) .burger__wrapper .up {
-  transform: rotate(37deg);
+  transform: translateY(8px) rotate(45deg);
+  transition: 0.2s ease-in-out;
 }
-
+.nav:has(#burger__button:checked) .burger__wrapper .middle {
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
 .nav:has(#burger__button:checked) .burger__wrapper .down {
-  transform: rotate(-37deg);
+  transform: translateY(-8px) rotate(-45deg);
+  transition: 0.2s ease-in-out;
 }
 
 @media (width > 1000px) {
@@ -395,10 +405,23 @@ footer:before {
   width: 500px;
 }
 .hero__scroll {
+  z-index: 0;
   text-align: center;
   font-family: "Playfair", Merriweather, serif;
   font-size: 25px;
   color: #5F021F;
+  animation: upDown 1s ease-in-out infinite;
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
 .hero__scroll:after {
   content: "";
@@ -455,6 +478,7 @@ footer:before {
   gap: 20px;
   color: #5F021F;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 @media (min-width: 817px) {
   .lastProjects__container__article {
@@ -487,6 +511,8 @@ footer:before {
   text-align: center;
 }
 .lastProjects__container__article__cta {
+  display: block;
+  position: relative;
   font-family: "Playfair", Merriweather, serif;
   font-size: 20px;
   color: white;
@@ -494,10 +520,38 @@ footer:before {
   background-color: #5F021F;
   border-radius: 10px;
   transition: 0.1s;
+  overflow: hidden;
+  min-height: 20px;
+  border: 2px solid #5F021F;
+}
+.lastProjects__container__article__cta span {
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+}
+.lastProjects__container__article__cta span:hover {
+  transition: transform 0.3s ease-in-out;
+  color: #5F021F;
+}
+.lastProjects__container__article__cta:before {
+  content: "";
+  width: 101%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FFF5E8;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+}
+.lastProjects__container__article__cta:hover::before {
+  animation: 0.2s ease-in-out;
+  transform: translateX(0);
 }
 .lastProjects__container__article__cta:hover {
-  transition: 0.1s;
-  transform: scale(1.2);
+  color: #5F021F;
+  border: 2px solid #5F021F;
 }
 
 .bg {
@@ -579,6 +633,7 @@ footer:before {
   align-items: center;
   border-radius: 10px;
   padding: 50px 35px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 @media (min-width: 817px) {
   .projectsList__container__items {
@@ -738,6 +793,11 @@ footer:before {
   flex-direction: column;
   gap: 20px;
 }
+@media (min-width: 1024px) {
+  .step__list__items:nth-child(even) {
+    grid-template-areas: "titre image" "paragraph image";
+  }
+}
 .step__list__items {
   padding: 20px 0;
   border-top: 3px solid #5F021F;
@@ -797,6 +857,7 @@ footer:before {
   max-width: 1200px;
   margin: auto;
   padding: 30px 25px;
+  overflow: hidden;
 }
 .tools__title {
   font-family: "Playfair", Merriweather, serif;
@@ -807,17 +868,19 @@ footer:before {
 }
 .tools__list {
   display: flex;
-  gap: 50px;
   align-items: center;
-  animation: scroll 5s linear infinite;
+  animation: scroll 13s linear infinite;
 }
 @keyframes scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
+}
+.tools__list__items {
+  margin: 0 4em;
 }
 .tools__list__items__img {
   width: 70px;

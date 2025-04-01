@@ -1,7 +1,10 @@
+
 .header__containner {
     background-color: $bg;
     padding: 22px 25px 0;
 
+}
+body {
 }
 .nav {
     display: flex;
@@ -51,7 +54,7 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 5px;
         position: absolute;
         background-color: $wood;
         padding: 10px;
@@ -68,8 +71,8 @@
             background-color: $red;
             display: block;
             content: "";
-            width: 20px;
-            min-height: 4px;
+            width: 22px;
+            min-height: 3px;
         }
 
     }
@@ -120,19 +123,37 @@
 }
 
 .up {
-    transform-origin: left;
+        transition: .2s ease-in-out;
+
+}
+.middle {
+        transition: .2s ease-in-out;
+
 }
 .down {
-    transform-origin: left;
+        transition: .2s ease-in-out;
+
 }
-.nav:has(#burger__button:checked) .burger__wrapper .up {
-    transform: rotate(37deg);
-}
-.nav:has(#burger__button:checked) .burger__wrapper .down {
-    transform: rotate(-37deg);
+.nav:has(#burger__button:checked) .burger__wrapper {
+    .up {
+        transform:  translateY(8px)rotate(45deg);
+        transition: .2s ease-in-out;
+    }
+    .middle {
+        opacity: 0;
+        transition: .2s ease-in-out;
+
+    }
+    .down {
+        transform:  translateY(-8px)rotate(-45deg);
+        transition: .2s ease-in-out;
+
+    }
 }
 @media (width > 1000px) {
     .burger__wrapper {
         background-color: $red;
     }
+}
+main {
 }
