@@ -1,3 +1,4 @@
+
 .bg {
     background-color: $bg;
 
@@ -14,7 +15,7 @@
 
 
     &__title {
-        font-family: $playfair;
+        font-family: $playfair-bold;
         font-weight: 700;
         text-align: center;
         font-size: 49px;
@@ -51,7 +52,7 @@
     gap: 50px;
 
     &__title {
-        font-size: 38px;
+        font-size: 39px;
         font-weight: 700;
         color: $red;
     }
@@ -87,20 +88,21 @@
             }
 
             &__title {
-                font-family: $playfair;
+                font-family: $playfair-bold;
                 font-weight: bold;
-                font-size: 25px;
+                font-size: 29px;
 
             }
 
             &__paragraph {
                 font-family: $poppins-regular;
-                line-height: 1.5;
+                font-size: 19px;
+                line-height: 1.4;
                 text-align: center;
             }
 
             &__link {
-                font-family: $playfair;
+                font-family: $playfair-bold;
                 font-size: 20px;
                 color: white;
                 padding: 16px 22px;

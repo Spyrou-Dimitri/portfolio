@@ -53,43 +53,20 @@ table {
 }
 
 @font-face {
-  font-family: "Georgia regular";
-  src: url("../../fonts/Georgia/Georgia.ttf");
-  font-style: normal;
-}
-@font-face {
-  font-family: "Georgia bold";
-  src: url("../../fonts/Georgia/Georgia-Bold.ttf");
-}
-@font-face {
-  font-family: "Poppins regular";
-  src: url("../../fonts/Poppins/Poppins-Black.ttf");
-}
-@font-face {
-  font-family: "Poppins italic";
-  src: url("../../fonts/Poppins/Poppins-Italic.ttf");
-}
-@font-face {
-  font-family: "Impact";
-  src: url("../../fonts/Impact/Impact.ttf");
-}
-@font-face {
-  font-family: "Playfair";
-  src: url("../../fonts/Playfair-Regular.ttf");
-  font-weight: normal;
-}
-@font-face {
   font-family: "Poppins-regular";
-  src: url("../../fonts/Playfair-Regular.ttf");
-  font-weight: normal;
+  src: url("/wp-content/themes/portfolio/resources/fonts/Poppins-Regular.ttf");
 }
 @font-face {
-  font-family: "Poppins-Italic";
-  src: url("../../fonts/Poppins-Italic.ttf");
+  font-family: "Poppins-italic";
+  src: url("/wp-content/themes/portfolio/resources/fonts/Poppins-Italic.ttf");
 }
 @font-face {
-  font-family: "Poppins-Regular";
-  src: url("../../fonts/Playfair-Regular.ttf");
+  font-family: "Playfair-regular";
+  src: url("/wp-content/themes/portfolio/resources/fonts/Playfair-Regular.ttf");
+}
+@font-face {
+  font-family: "Playfair-bold";
+  src: url("/wp-content/themes/portfolio/resources/fonts/Playfair-Bold.ttf");
 }
 .sro {
   clip: rect(0 0 0 0);
@@ -112,6 +89,16 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+
+header {
+  position: relative;
+  z-index: 9999;
+}
+
+main {
+  position: relative;
+  z-index: 10;
 }
 
 .header__containner {
@@ -138,7 +125,7 @@ a {
 }
 .nav__link {
   position: relative;
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-regular", Merriweather, serif;
   font-weight: 700;
   color: #5F021F;
   font-size: 1.8rem;
@@ -193,7 +180,7 @@ a {
   min-height: 3px;
 }
 .nav__container {
-  z-index: 0;
+  z-index: -1;
   background-color: #FFF5E8;
   top: 0;
   right: 0;
@@ -219,6 +206,7 @@ a {
   }
 }
 .nav__container__items__link {
+  font-family: "Playfair-bold", Merriweather, serif;
   display: inline-block;
   font-size: 2rem;
   color: #5F021F;
@@ -269,6 +257,8 @@ a {
 }
 footer {
   background-color: #FFF5E8;
+  position: relative;
+  z-index: 100;
 }
 footer:before {
   content: "";
@@ -302,12 +292,12 @@ footer:before {
   align-items: flex-start;
 }
 .footer__container__section__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-regular", Merriweather, serif;
   font-weight: bold;
   font-size: 20px;
 }
 .footer__container__section .contact__link {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-regular", Merriweather, serif;
   color: #FFF5E8;
   padding: 16px 22px;
   border-radius: 10px;
@@ -337,8 +327,7 @@ footer:before {
 .hero__title {
   display: flex;
   flex-direction: column;
-  font-family: "Playfair", Merriweather, serif;
-  font-weight: 700;
+  font-family: "Playfair-bold", Merriweather, serif;
   align-items: center;
   font-size: 49px;
   gap: 25px;
@@ -351,13 +340,13 @@ footer:before {
   }
 }
 .hero__title__before, .hero__title__after {
+  font-family: "Playfair-regular", Merriweather, serif;
   color: #D8B384;
   font-size: 38px;
   font-weight: 400;
 }
 .hero__quote {
-  font-family: "Poppins-Italic", Helvetica, sans-serif;
-  font-style: italic;
+  font-family: "Poppins-italic", Helvetica, sans-serif;
   color: #5F021F;
   text-align: center;
   padding: 20px 0 40px;
@@ -381,7 +370,7 @@ footer:before {
   align-items: center;
 }
 .hero__container__cta__link {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-regular", Merriweather, serif;
   font-size: 20px;
   color: white;
   padding: 0.8em 1.1em;
@@ -407,7 +396,7 @@ footer:before {
 .hero__scroll {
   z-index: 0;
   text-align: center;
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-regular", Merriweather, serif;
   font-size: 25px;
   color: #5F021F;
   animation: upDown 1s ease-in-out infinite;
@@ -442,7 +431,7 @@ footer:before {
   gap: 50px;
 }
 .lastProjects__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-size: 38px;
   font-weight: 700;
   color: #5F021F;
@@ -478,7 +467,6 @@ footer:before {
   gap: 20px;
   color: #5F021F;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 @media (min-width: 817px) {
   .lastProjects__container__article {
@@ -501,20 +489,21 @@ footer:before {
   z-index: 0;
 }
 .lastProjects__container__article__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: bold;
   font-size: 25px;
 }
 .lastProjects__container__article__paragraph {
-  font-family: "Poppins-Regular", Helvetica, sans-serif;
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
   line-height: 1.5;
   text-align: center;
 }
 .lastProjects__container__article__cta {
   display: block;
   position: relative;
-  font-family: "Playfair", Merriweather, serif;
-  font-size: 20px;
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-size: 19px;
   color: white;
   padding: 16px 22px;
   background-color: #5F021F;
@@ -568,7 +557,7 @@ footer:before {
   gap: 44px;
 }
 .projectsHome__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   text-align: center;
   font-size: 49px;
@@ -604,7 +593,7 @@ footer:before {
   gap: 50px;
 }
 .projectsList__title {
-  font-size: 38px;
+  font-size: 39px;
   font-weight: 700;
   color: #5F021F;
 }
@@ -646,17 +635,18 @@ footer:before {
   }
 }
 .projectsList__container__items__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 29px;
 }
 .projectsList__container__items__paragraph {
-  font-family: "Poppins-Regular", Helvetica, sans-serif;
-  line-height: 1.5;
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
   text-align: center;
 }
 .projectsList__container__items__link {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-size: 20px;
   color: white;
   padding: 16px 22px;
@@ -669,7 +659,7 @@ footer:before {
   transform: scale(1.2);
 }
 .projectsList__other {
-  font-family: "Poppins-Regular", Helvetica, sans-serif;
+  font-family: "Poppins-regular", Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   text-align: center;
@@ -689,7 +679,7 @@ footer:before {
   align-items: center;
 }
 .about__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   text-align: center;
   font-size: 49px;
@@ -700,6 +690,13 @@ footer:before {
   flex-direction: column-reverse;
   align-items: center;
   gap: 44px;
+}
+.about__presentation p {
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  margin-bottom: 20px;
+  color: #5F021F;
+  line-height: 1.4;
 }
 @media (min-width: 817px) {
   .about__presentation {
@@ -714,19 +711,23 @@ footer:before {
   gap: 20px;
 }
 .about__presentation__content__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   font-size: 39px;
   color: #5F021F;
 }
 .about__presentation__content__paragraph {
-  font-family: "Poppins-Regular", Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.3;
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
 }
 .about__presentation__img img {
   width: 100%;
   border-radius: 50%;
+}
+
+.about__presentation__content__paragraph p {
+  font-size: 1em;
 }
 
 .career {
@@ -738,7 +739,7 @@ footer:before {
   gap: 20px;
 }
 .career__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   font-size: 39px;
   color: #5F021F;
@@ -782,7 +783,7 @@ footer:before {
   padding: 30px 25px;
 }
 .step__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   font-size: 39px;
   color: #5F021F;
@@ -796,6 +797,7 @@ footer:before {
 @media (min-width: 1024px) {
   .step__list__items:nth-child(even) {
     grid-template-areas: "titre image" "paragraph image";
+    margin-left: auto;
   }
 }
 .step__list__items {
@@ -814,6 +816,7 @@ footer:before {
 @media (min-width: 1024px) {
   .step__list__items {
     grid-template-areas: "image titre" "image paragraph";
+    max-width: 60%;
   }
 }
 .step__list__items__img {
@@ -832,7 +835,7 @@ footer:before {
   }
 }
 .step__list__items__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   font-size: 29px;
   color: #5F021F;
@@ -843,8 +846,9 @@ footer:before {
   }
 }
 .step__list__items__paragraph {
-  font-family: "Poppins-Regular", Helvetica, sans-serif;
-  line-height: 1.3;
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
   color: #5F021F;
 }
 @media (min-width: 1024px) {
@@ -860,7 +864,7 @@ footer:before {
   overflow: hidden;
 }
 .tools__title {
-  font-family: "Playfair", Merriweather, serif;
+  font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   font-size: 39px;
   color: #5F021F;
@@ -885,4 +889,177 @@ footer:before {
 .tools__list__items__img {
   width: 70px;
   height: auto;
+}
+
+.bgContact {
+  background-color: #FFF5E8;
+}
+
+.homeContact {
+  margin: auto;
+  max-width: 1200px;
+  padding: 44px 25px;
+}
+.homeContact__title {
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 49px;
+  color: #5F021F;
+}
+
+.content {
+  max-width: 1200px;
+  padding: 44px 25px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+@media (min-width: 1024px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.content__coord {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #5F021F;
+}
+.content__coord__title {
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-weight: 700;
+  font-size: 39px;
+}
+.content__coord__paragraph {
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.content__coord__list {
+  display: flex;
+  flex-direction: column;
+}
+.content__coord__list__title {
+  margin-bottom: 10px;
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-size: 29px;
+  font-weight: 700;
+}
+.content__coord__list__link {
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+.content__coord__list__link a {
+  text-decoration: underline;
+  color: #5F021F;
+}
+.content__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #5F021F;
+}
+.content__contact__title {
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-weight: 700;
+  font-size: 39px;
+}
+.content__contact__paragraph {
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.content__contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (min-width: 817px) {
+  .content__contact__form .lastName-FirstName, .content__contact__form .email-tel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.content__contact__form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.content__contact__form__container label {
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+.content__contact__form__container input, .content__contact__form__container textarea {
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  padding: 0.8em 1.1em;
+  border: 2px solid #5F021F;
+  border-radius: 10px;
+  color: #5F021F;
+}
+.content__contact__form__container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content__contact__form__container > div label {
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+.content__contact__form__container > div input, .content__contact__form__container > div textarea {
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-size: 19px;
+  padding: 0.8em 1.1em;
+  border: 2px solid #5F021F;
+  border-radius: 10px;
+  color: #5F021F;
+}
+.content__contact__form button {
+  position: relative;
+  font-family: "Playfair-bold", Merriweather, serif;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.8em 1.1em;
+  border-radius: 10px;
+  border: 2px solid #5F021F;
+  background-color: #5F021F;
+  cursor: pointer;
+  overflow: hidden;
+  color: white;
+}
+.content__contact__form button:hover {
+  animation: 0.2s ease-in-out;
+  color: #5F021F;
+  border: 2px solid #5F021F;
+}
+.content__contact__form button span {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+.content__contact__form button span:hover {
+  animation: 0.2s ease-in-out;
+  color: #5F021F;
+}
+.content__contact__form button:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: white;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+}
+.content__contact__form button:hover:before {
+  transition: transform 0.2s ease-in-out;
+  transform: translateX(0);
 }

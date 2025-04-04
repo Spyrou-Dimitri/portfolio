@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     &__title {
-        font-family: "Playfair", Merriweather, serif;
+        font-family: $playfair-bold;
         font-weight: 700;
         text-align: center;
         font-size: 49px;
@@ -23,6 +23,13 @@
         flex-direction: column-reverse;
         align-items: center;
         gap: 44px;
+        & p {
+            font-family: $poppins-regular;
+            font-size: 19px;
+            margin-bottom: 20px;
+            color: $red;
+            line-height: 1.4;
+        }
         
         @media (min-width: $medium-screen) {
             display: grid;
@@ -37,15 +44,15 @@
             gap: 20px;
 
             &__title {
-                font-family: $playfair;
+                font-family: $playfair-bold;
                 font-weight: 700;
                 font-size: 39px;
                 color: $red;
             }
             &__paragraph {
                 font-family: $poppins-regular;
-                font-size: 18px;
-                line-height: 1.3;
+                font-size: 16px;
+                line-height: 1.4;
             }
         }
         &__img {
@@ -56,6 +63,9 @@
         }
     }
 }
+.about__presentation__content__paragraph p{
+    font-size: 1em;
+}
 .career {
     max-width: 1200px;
     margin: auto;
@@ -65,7 +75,7 @@
     gap: 20px;
 
     &__title {
-        font-family: "Playfair", Merriweather, serif;
+        font-family: $playfair-bold;
         font-weight: 700;
         font-size: 39px;
         color: #5F021F;
@@ -115,7 +125,7 @@
     padding: 30px 25px;
 
     &__title {
-        font-family: "Playfair", Merriweather, serif;
+        font-family: $playfair-bold;
         font-weight: 700;
         font-size: 39px;
         color: #5F021F;
@@ -129,6 +139,7 @@
             @media (min-width: $wide-screen) {
                 grid-template-areas: "titre image"
                                      "paragraph image";
+                margin-left: auto;
 
             }
         }
@@ -146,6 +157,7 @@
             @media (min-width: $wide-screen) {
                 grid-template-areas: "image titre"
                                      "image paragraph";
+                max-width: 60%;
 
             }
             &__img {
@@ -161,7 +173,7 @@
                 }
             }
             &__title {
-                font-family: "Playfair", Merriweather, serif;
+                font-family: $playfair-bold;
                 font-weight: 700;
                 font-size: 29px;
                 color: #5F021F;
@@ -171,7 +183,8 @@
             }
             &__paragraph {
                 font-family:$poppins-regular;
-                line-height: 1.3;
+                font-size: 19px;
+                line-height: 1.4;
                 color: $red;
                 @media (min-width: $wide-screen) {
                     grid-area: paragraph;
@@ -187,7 +200,7 @@
     overflow: hidden;
 
     &__title {
-        font-family: "Playfair", Merriweather, serif;
+        font-family: $playfair-bold;
         font-weight: 700;
         font-size: 39px;
         color: #5F021F;

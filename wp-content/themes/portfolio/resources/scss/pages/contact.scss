@@ -1,0 +1,186 @@
+.bgContact {
+    background-color: $bg;
+}
+.homeContact {
+    margin: auto;
+    max-width: 1200px;
+    padding: 44px 25px;
+    &__title {
+        font-family: $playfair-bold;
+        font-weight: 700;
+        text-align: center  ;
+        font-size: 49px;
+        color: $red;
+    }
+
+}
+.content{
+    max-width: 1200px;
+    padding: 44px 25px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    @media (min-width: $wide-screen) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    &__coord{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: $red;
+        &__title {
+            font-family: $playfair-bold;
+            font-weight: 700;
+            font-size: 39px;
+
+        }
+        &__paragraph {
+            font-family: $poppins-regular;
+            font-size: 19px;
+            line-height: 1.4;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                margin-bottom: 10px;
+                font-family: $playfair-bold;
+                font-size: 29px;
+                font-weight: 700;
+            }
+            &__link {
+                font-family: $poppins-regular;
+                font-size: 19px;
+                margin-bottom: 20px;
+                a {
+                    text-decoration: underline;
+                    color: $red;
+                }
+            }
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: $red;
+        &__title {
+            font-family: $playfair-bold;
+            font-weight: 700;
+            font-size: 39px;
+        }
+        &__paragraph {
+            font-family: $poppins-regular;
+            font-size: 19px;
+            line-height: 1.4;
+        }
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            & .lastName-FirstName, & .email-tel {
+                @media (min-width: $medium-screen) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+            &__container {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                label {
+                    font-family: $playfair-bold;
+                    font-size: 26px;
+                    font-weight: 700;
+                }
+                input, textarea {
+                    font-family: $poppins-regular;
+                    font-size: 19px;
+                    padding: 0.8em 1.1em;
+                    border: 2px solid $red;
+                    border-radius: 10px;
+                    color: $red;
+                }
+
+                &>div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    label {
+                        font-family: $playfair-bold;
+                        font-size: 26px;
+                        font-weight: 700;
+                    }
+                    input, textarea {
+                        font-family: $poppins-regular;
+                        font-size: 19px;
+                        padding: 0.8em 1.1em;
+                        border: 2px solid $red;
+                        border-radius: 10px;
+                        color: $red;
+                    }
+
+                }
+            }
+
+
+            button {
+                position: relative;
+                font-family: $playfair-bold;
+                font-weight: bold;
+                font-size: 2rem;
+                padding: 0.8em 1.1em;
+                border-radius: 10px;
+                border: 2px solid $red;
+                background-color: $red;
+                cursor: pointer;
+                overflow: hidden;
+                color: white;
+                &:hover {
+                    animation: .2s ease-in-out;
+                    color: $red;
+                    border: 2px solid $red;
+                }
+                span {
+                    position: relative;
+                    z-index: 1;
+                    display: block;
+
+                    &:hover {
+                        animation: .2s ease-in-out;
+
+                        color: $red;
+                    }
+                }
+
+                &:before {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    background-color: white;
+                    transform: translateX(100%);
+                    transition: transform 0.2s ease-in-out;
+
+
+                }
+                &:hover:before {
+                    transition: transform 0.2s ease-in-out;
+
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}

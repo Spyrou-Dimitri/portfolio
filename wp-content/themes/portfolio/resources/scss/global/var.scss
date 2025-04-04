@@ -5,9 +5,10 @@ $wood: #D8B384;
 $red: #5F021F;
 
 //Fonts
-$playfair: "Playfair", Merriweather, serif;
-$poppins-regular: 'Poppins-Regular', Helvetica, sans-serif;
-$poppins-italic: 'Poppins-Italic', Helvetica, sans-serif;
+$playfair-regular: "Playfair-regular", Merriweather, serif;
+$playfair-bold: "Playfair-bold", Merriweather, serif;
+$poppins-regular: 'Poppins-regular', Helvetica, sans-serif;
+$poppins-italic: 'Poppins-italic', Helvetica, sans-serif;
 
 //Screens
 
@@ -17,21 +18,4 @@ $wide-screen: 1024px;
 
 
 //font-face
-@font-face {
-    font-family: 'Playfair';
-    src: url('../../fonts/Playfair-Regular.ttf');
-    font-weight: normal;
-}
-@font-face {
-    font-family: 'Poppins-regular';
-    src: url('../../fonts/Playfair-Regular.ttf');
-    font-weight: normal;
-}
-@font-face {
-    font-family: 'Poppins-Italic';
-    src: url('../../fonts/Poppins-Italic.ttf');
-}
-@font-face {
-    font-family: 'Poppins-Regular';
-    src: url("../../fonts/Playfair-Regular.ttf");
-}
+

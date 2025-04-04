@@ -14,9 +14,7 @@ get_header();
                 <h3 class="about__presentation__content__title">
                     <?= get_field('presentation-title'); ?>
                 </h3>
-                <p class="about__presentation__content__paragraph">
-                    <?= get_field('description'); ?>
-                </p>
+                <?= get_field('description'); ?>
             </div>
             <div class="about__presentation__img">
                 <img src="<?= get_field('about-img'); ?>" alt="Photo de moi">
@@ -57,7 +55,8 @@ get_header();
                     <?php while (have_rows('wayOfWorking-list')) : the_row(); ?>
 
                         <li class="step__list__items">
-                            <img class="step__list__items__img" src="<?= get_sub_field('wayOfWorking-ball') ?>" alt="<?= get_sub_field('ball-alt') ?>">
+                            <img class="step__list__items__img" src="<?= get_sub_field('wayOfWorking-ball') ?>"
+                                 alt="<?= get_sub_field('ball-alt') ?>">
                             <h3 class="step__list__items__title"><?= get_sub_field('wayOfWorking-titleStep') ?></h3>
                             <p class="step__list__items__paragraph"><?= get_sub_field('wayOfWorking-desc') ?></p>
                         </li>

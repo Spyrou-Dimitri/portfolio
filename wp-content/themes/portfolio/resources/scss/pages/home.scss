@@ -29,8 +29,7 @@
     &__title {
         display: flex;
         flex-direction: column;
-        font-family: $playfair;
-        font-weight: 700;
+        font-family: $playfair-bold;
         align-items: center;
         font-size: 49px;
         gap: 25px;
@@ -40,6 +39,7 @@
             font-size: 65px;
         }
         &__before, &__after {
+            font-family: $playfair-regular;
             color: $wood;
             font-size: 38px;
             font-weight: 400;
@@ -51,7 +51,6 @@
     }
     &__quote {
         font-family: $poppins-italic;
-        font-style: italic;
         color: $red;
         text-align: center;
         padding: 20px 0 40px;
@@ -73,7 +72,7 @@
         align-items: center;
 
         &__link {
-            font-family: $playfair;
+            font-family: $playfair-regular;
             font-size: 20px;
             color: white;
             padding: 0.8em 1.1em;
@@ -112,7 +111,7 @@
 
         z-index: 0;
         text-align: center;
-        font-family: $playfair;
+        font-family: $playfair-regular;
         font-size: 25px;
         color: $red;
         animation: upDown  1s ease-in-out infinite;
@@ -153,7 +152,7 @@
     flex-direction: column;
     gap: 50px;
     &__title {
-        font-family: $playfair;
+        font-family: $playfair-bold;
         font-size: 38px;
         font-weight: 700;
         color: $red;
@@ -186,7 +185,6 @@
             gap: 20px;
             color: $red;
             box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
             @media (min-width: $medium-screen) {
                 width: 37%;
             }
@@ -206,7 +204,7 @@
                 z-index: 0;
             }
             &__title {
-                font-family: $playfair;
+                font-family: $playfair-bold;
                 font-weight: bold;
                 font-size: 25px;
             }
@@ -214,14 +212,15 @@
             }
             &__paragraph {
                 font-family: $poppins-regular;
+                font-size: 19px;
                 line-height: 1.5;
                 text-align: center;
             }
             &__cta {
                 display: block;
                 position: relative;
-                font-family: $playfair;
-                font-size: 20px;
+                font-family: $playfair-bold ;
+                font-size: 19px;
                 color: white;
                 padding: 16px 22px;
                 background-color: $red;

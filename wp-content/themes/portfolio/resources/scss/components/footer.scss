@@ -1,6 +1,7 @@
 footer {
     background-color: $bg;
-
+    position: relative;
+    z-index: 100;
     &:before {
         content: "";
         background-image: url("/wp-content/themes/portfolio/resources/img/beforeSection.svg");
@@ -31,14 +32,14 @@ footer {
         align-items: flex-start;
 
         &__title {
-            font-family: $playfair;
+            font-family: $playfair-regular;
             font-weight: bold;
             font-size: 20px;
         }
         .contact {
 
             &__link {
-                font-family: $playfair;
+                font-family: $playfair-regular;
                 color: $bg;
                 padding:16px 22px;
                 border-radius: 10px;

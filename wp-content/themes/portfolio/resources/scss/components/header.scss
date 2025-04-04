@@ -1,11 +1,17 @@
-
+header {
+    position: relative;
+    z-index: 9999;
+}
+main {
+    position: relative;
+    z-index: 10;
+}
 .header__containner {
     background-color: $bg;
     padding: 22px 25px 0;
 
 }
-body {
-}
+
 .nav {
     display: flex;
     z-index: 0;
@@ -24,7 +30,7 @@ body {
 
     &__link {
         position: relative;
-        font-family: $playfair;
+        font-family: $playfair-regular;
         font-weight: 700;
         color: $red;
         font-size: 1.8rem;
@@ -78,7 +84,7 @@ body {
     }
 
     &__container {
-        z-index: 0;
+        z-index: -1;
         background-color: $bg;
         top: 0;
         right: 0;
@@ -102,6 +108,7 @@ body {
         }
         &__items {
             &__link {
+                font-family: $playfair-bold;
                 display: inline-block;
                 font-size: 2rem;
                 color: $red;
@@ -113,7 +120,6 @@ body {
             }
                 &:hover {
                     transition: .3s ease-in-out;
-
                     color: $bg;
                     background-color: $red;
                 }
@@ -150,6 +156,7 @@ body {
 
     }
 }
+
 @media (width > 1000px) {
     .burger__wrapper {
         background-color: $red;
