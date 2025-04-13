@@ -25,7 +25,6 @@ get_header() ?>
             $projects = new WP_Query([
                 'post_type' => 'projects',
                 'order' => 'DESC',
-
                 'post_per_page' => 3,
             ]);
             if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
@@ -33,7 +32,7 @@ get_header() ?>
                     <?= get_the_post_thumbnail(attr: ['class' => 'resizeImg']) ?>
                     <h3 class="projectsList__container__items__title"> <?= get_the_title() ?></h3>
                     <p class="projectsList__container__items__paragraph"><?= get_the_excerpt() ?></p>
-                    <a class="projectsList__container__items__link" href="<?= get_the_permalink() ?>" title="Voir le projet <?= get_the_title() ?>">Voir le projet</a>
+                    <a class="projectsList__container__items__link" href="<?= get_the_permalink() ?>" title="Voir le projet <?= get_the_title() ?>"><span>Voir le projet</span></a>
                 </article>
             <?php endwhile; endif; ?>
         </div>

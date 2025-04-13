@@ -1,0 +1,308 @@
+.bgProject {
+    background-color: $bg;
+}
+
+.project {
+    max-width: 1200px;
+    margin: auto;
+    padding: 44px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    &__title {
+        font-family: $playfair-bold;
+        font-weight: 700;
+        font-size: 49px;
+        color: $red;
+        text-align: center;
+    }
+
+    &__comebackLink {
+        font-family: $poppins-regular;
+        font-size: 20px;
+        color: $red;
+        margin-top: .5em;
+        display: flex;
+
+        &:hover {
+            border-bottom: 2px solid $red;
+        }
+
+        &:before {
+            content: url("/wp-content/themes/portfolio/resources/img/arrowLeft.svg");
+            display: inline-block;
+
+
+        }
+
+    }
+    &__containerLinks {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 50px;
+        margin-top: 3em;
+
+        .siteButton {
+            max-width: 400px;
+            display: block;
+            position: relative;
+            font-family: $playfair-bold;
+            font-size: 19px;
+            color: white;
+            padding: 16px 22px;
+            background-color: $red;
+            border-radius: 10px;
+            transition: 0.1s;
+            overflow: hidden;
+            min-height: 20px;
+            border: 2px solid $red;
+
+            span {
+                display: block;
+                position: relative;
+                z-index: 1;
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    transition: transform 0.3s ease-in-out;
+                    color: $red;
+                }
+            }
+
+            &:before {
+                content: "";
+                width: 101%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: $bg;
+                transform: translateX(100%);
+                transition: transform 0.2s ease-in-out;
+            }
+
+            &:hover::before {
+                transform: translateX(0);
+            }
+
+            &:hover {
+                color: $red;
+                border: 2px solid $red;
+            }
+        }
+
+        .githubButton {
+            @extend .siteButton;
+            color: $red;
+            background-color: $wood;
+            border: 2px solid $wood;
+
+            span {
+                &:hover {
+                    color: white;
+                }
+            }
+
+            &:before {
+                background-color: $bg;
+            }
+
+            &:hover {
+                color: $wood;
+                border: 2px solid $red;
+            }
+        }
+
+    }
+}
+%section-shared {
+    padding: 44px 25px;
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    flex-direction: column;
+    gap: 50px;
+}
+.resume, .guideLine, .palette {
+    @extend %section-shared;
+    @media (min-width: $medium-screen) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        gap: 3em;
+        align-items: center;
+    }
+    h2 {
+        font-family: $playfair-bold;
+        font-weight: 700;
+        font-size: 39px;
+        color: $red;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &__tools {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            &__list {
+                display: flex;
+                gap: 30px;
+
+                &__item {
+                    width: 70px;
+                    height: auto;
+                }
+            }
+        }
+
+
+
+        &__desc {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            &__paragraph {
+                font-family: $poppins-regular;
+                font-size: 19px;
+                color: $red;
+                line-height: 1.4;
+            }
+
+        }
+
+        &__img {
+
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__title {
+            font-family: $playfair-bold;
+            font-weight: 700;
+            font-size: 39px;
+            color: $red;
+        }
+
+        &__paragraph {
+            font-family: $poppins-regular;
+            font-size: 19px;
+            color: $red;
+            line-height: 1.4;
+        }
+
+    }
+
+
+    &__img {
+
+        img {
+            border-radius: 50%;
+        }
+    }
+}
+.resume {
+    @media (min-width: $medium-screen) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+
+    }
+}
+.guideLine {
+    @media (min-width: $medium-screen) {
+        display: grid;
+        grid-template-areas: "img content";
+    }
+
+    &__content {
+        @media (min-width: $medium-screen) {
+            grid-area: content;
+        }
+        &__paragraph {
+            font-family: $poppins-regular;
+            font-size: 19px;
+            color: $red;
+            line-height: 1.4;
+        }
+    }
+    &__img {
+        @media (min-width: $medium-screen) {
+            grid-area: img;
+
+        }
+    }
+}
+.palette {
+    @media (min-width: $medium-screen) {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 3em;
+        width: 100%;
+        &__item {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+
+
+            &:hover {
+                transition: all 0.1s ease-in-out;
+                transform: scale(1.1);
+            }
+            svg {
+                width: 100%;
+            }
+            &:before {
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                justify-content: center;
+                align-items: center;
+                font-family: $poppins-regular;
+                color: white;
+                text-align: center;
+                content: "Click";
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background-color: black;
+                opacity: 0;
+                transition: all 0.1s ease-in-out;
+            }
+            &:hover::before {
+                opacity: .5;
+                transition: all 0.1s ease-in-out;
+            }
+        }
+    }
+    &__paragraph {
+        font-family: $poppins-italic;
+        text-align: center;
+        color: $red;
+        line-height: 1.4;
+        font-size: 20px;
+        margin: auto;
+        span {
+            display: block;
+        }
+    }
+}
+

@@ -11,7 +11,7 @@
             <p>
                 Dans ce cas, prenez contact avec moi via le bouton ci-dessous !
             </p>
-            <a href="#" title="Vers la page de contact" hreflang="fr" class="contact__link">Contactez-moi</a>
+            <a href="#" title="Vers la page de contact" hreflang="fr" class="contact__link"><span>Contactez-moi</span></a>
         </div>
         <nav class="footer__container__section secondNav">
             <h3 class="footer__container__section__title">
@@ -20,7 +20,6 @@
             <ul class="footer__container__section__list">
                 <?php foreach (pf_get_navigation_links('header_menu') as $link): ?>
                     <li class="footer__container__section__list__items">
-
                         <a class="footer__container__section__list__items__links" href="<?= $link->url ?>"
                            class="nav__containner__items__link"
                            title="Vers la page <?= $link->label ?>"><?= $link->label ?></a>
