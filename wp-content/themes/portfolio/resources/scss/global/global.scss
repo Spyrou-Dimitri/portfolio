@@ -23,3 +23,21 @@ main {
 body {
     overflow-x: hidden;
 }
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 1.5rem;
+}
+h2 {
+    font-family: $playfair-bold;
+    font-size: 2.375rem;
+    font-weight: 700;
+    color: $red;
+    margin-bottom: 3rem;
+}
+p {
+    font-family: $poppins-regular;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $red;
+}

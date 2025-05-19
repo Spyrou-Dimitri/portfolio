@@ -17,7 +17,15 @@ get_header();
                 <?= get_field('description'); ?>
             </div>
             <div class="about__presentation__img">
-                <img src="<?= get_field('about-img'); ?>" alt="Photo de moi">
+                <a href="<?= get_field('about-img') ?>"></a>
+                <?php
+                $about_img = get_field('about-img');;
+                ?>
+                <?= responsive_image($about_img, [
+                    'lazy' => 'eager',
+                    'classes' => ['resizeImg'],
+                    'custom_sizes' => '(min-width: 817px) 550px ,100vw'
+                ]); ?>
             </div>
         </article>
     </section>
@@ -93,6 +101,7 @@ get_header();
             <?php endwhile; endif; ?>
         </ul>
     </section>
+
 <?php endwhile;
 endif; ?>
 <?php

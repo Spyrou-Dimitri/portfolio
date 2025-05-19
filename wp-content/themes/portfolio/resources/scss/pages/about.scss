@@ -3,32 +3,23 @@
 
 }
 .about {
-    padding: 44px 25px;
-    margin: auto;
-    max-width: 1200px;
-    display: flex;
-    gap: 44px;
-    flex-direction: column;
-    align-items: center;
+
+
     &__title {
-        font-family: $playfair-bold;
-        font-weight: 700;
+
         text-align: center;
-        font-size: 49px;
-        color: #5F021F;
+        font-size: 3rem;
+
     }
 
     &__presentation {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        gap: 44px;
+        gap: 10rem;
         & p {
-            font-family: $poppins-regular;
-            font-size: 19px;
-            margin-bottom: 20px;
+            margin-bottom: 1.2em;
             color: $red;
-            line-height: 1.4;
         }
         
         @media (min-width: $medium-screen) {
@@ -41,18 +32,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 20px;
+            gap: 1.2em;
 
             &__title {
                 font-family: $playfair-bold;
                 font-weight: 700;
-                font-size: 39px;
+                font-size: 3rem;
                 color: $red;
-            }
-            &__paragraph {
-                font-family: $poppins-regular;
-                font-size: 16px;
-                line-height: 1.4;
             }
         }
         &__img {
@@ -67,18 +53,11 @@
     font-size: 1em;
 }
 .career {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+
 
     &__title {
-        font-family: $playfair-bold;
-        font-weight: 700;
-        font-size: 39px;
-        color: #5F021F;
+
     }
     &__container {
         display: grid;
@@ -122,33 +101,19 @@
 }
 
 .step {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 25px;
 
-    &__title {
-        font-family: $playfair-bold;
-        font-weight: 700;
-        font-size: 39px;
-        color: #5F021F;
-        margin-bottom: 20px;
-    }
+
+
     &__container {
         @include containerWithBalls;
     }
 }
 .tools {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 25px;
+
     overflow: hidden;
 
     &__title {
-        font-family: $playfair-bold;
-        font-weight: 700;
-        font-size: 39px;
-        color: #5F021F;
-        margin-bottom: 20px;
+
     }
     &__list {
 

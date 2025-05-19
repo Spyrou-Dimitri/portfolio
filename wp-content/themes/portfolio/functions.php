@@ -106,5 +106,94 @@ function create_site_options_page() {
 
 add_action('acf/init', 'create_site_options_page');
 
+function charger_jquery_et_fancybox() {
+    // Forcer le chargement de jQuery
+    wp_enqueue_script('jquery');
+
+    // Charger Fancybox CSS
+    wp_enqueue_style(
+        'fancybox-css',
+        'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css',
+        array(),
+        null
+    );
+
+    // Charger Fancybox JS
+    wp_enqueue_script(
+        'fancybox-js',
+        'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js',
+        array('jquery'),
+        null,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'charger_jquery_et_fancybox');
+
+function responsive_image($image, $settings): bool|string
+{
+    if (empty($image)) {
+        return '';
+    }
+
+    $image_id = '';
+
+    if (is_numeric($image)) {
+        $image_id = $image;
+    } elseif (is_array($image) && isset($image['ID'])) {
+        $image_id = $image['ID'];
+    } else {
+        return ''; // Aucun ID valide
+    }
+
+    $alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+    $image_post = get_post($image_id);
+    $title = $image_post->post_title ?? '';
+    $name = $image_post->post_name ?? '';
+
+    $src = wp_get_attachment_image_url($image_id, 'full');
+    $srcset = wp_get_attachment_image_srcset($image_id, 'full');
+
+    // Priorité à un "sizes" personnalisé
+    $sizes = $settings['custom_sizes'] ?? wp_get_attachment_image_sizes($image_id, 'full');
+
+    // Ex : (min-width: 920px) 620px, 100vw
+    if (empty($settings['custom_sizes'])) {
+        // Valeur par défaut : image prend toute la largeur en dessous de 920px, et 620px au-delà
+        $sizes = '(min-width: 920px) 620px, 100vw';
+    }
+
+    $lazy = $settings['lazy'] ?? 'eager';
+
+    $classes = '';
+    if (!empty($settings['classes'])) {
+        $classes = is_array($settings['classes']) ? implode(' ', $settings['classes']) : $settings['classes'];
+    }
+
+    ob_start();
+    ?>
+    <picture>
+        <img
+            src="<?= esc_url($src) ?>"
+            alt="<?= esc_attr($alt) ?>"
+            loading="<?= esc_attr($lazy) ?>"
+            srcset="<?= esc_attr($srcset) ?>"
+            sizes="<?= esc_attr($sizes) ?>"
+            class="<?= esc_attr($classes) ?>">
+    </picture>
+    <?php
+    return ob_get_clean();
+}
+
+function get_actual_title_page()
+{
+    $titlePage = "";
+
+    if (is_home() || is_front_page()) {
+        return $titlePage = "Accueil - " . get_bloginfo('name');
+    } elseif (is_singular()) {
+        return $titlePage = the_title("", " - ") . get_bloginfo("name");
+    }
+}
+
 
 

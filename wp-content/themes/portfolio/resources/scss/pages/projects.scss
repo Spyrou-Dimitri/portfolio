@@ -5,31 +5,19 @@
 }
 
 .projectsHome {
-    padding: 44px 25px;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 44px;
-
 
     &__title {
-        font-family: $playfair-bold;
-        font-weight: 700;
         text-align: center;
-        font-size: 49px;
-        color: $red;
-        @media (min-width: $medium-screen) {
-            font-size: 65px;
-        }
+        font-size: 3rem;
+
     }
 
     &__container {
-        display: grid;
-        max-width: 1200px;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); // Ajuste la largeur minimale
-        gap: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
 
         &__link {
             text-align: center;
@@ -37,6 +25,7 @@
             color: $red;
 
         }
+
         .is_active {
             background-color: $red;
             color: white;
@@ -45,116 +34,20 @@
 }
 
 .projectsList {
-    padding: 44px 25px;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-
-    &__title {
-        font-size: 39px;
-        font-weight: 700;
-        color: $red;
-    }
 
     &__container {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
-        gap: 50px;
+        gap: 3rem;
         @media (min-width: $medium-screen) {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 6em;
+            gap: 6rem;
         }
         @media (min-width: $wide-screen) {
 
         }
-        &__items {
-            gap: 20px;
-            color: $red;
-            display: flex;
-            flex-direction: column;
-            background-color: $bg;
-            align-items: center;
-            border-radius: 10px;
-            padding: 50px 35px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
-
-            @media (min-width: $medium-screen) {
-                width: 37%;
-            }
-            @media (min-width: $wide-screen) {
-                width: auto;
-            }
-
-            &__title {
-                font-family: $playfair-bold;
-                font-weight: bold;
-                font-size: 29px;
-
-            }
-
-            &__paragraph {
-                font-family: $poppins-regular;
-                font-size: 19px;
-                line-height: 1.4;
-                text-align: center;
-            }
-
-            &__link {
-                display: block;
-                position: relative;
-                font-family: $playfair-bold ;
-                font-size: 19px;
-                color: white;
-                padding: 16px 22px;
-                background-color: $red;
-                border-radius: 10px;
-                transition: 0.1s;
-                overflow: hidden;
-                min-height: 20px;
-                border: 2px solid $red;
-                span {
-                    display: block;
-                    position: relative;
-                    z-index: 1;
-                    transition: transform 0.3s ease-in-out;
-
-                    &:hover {
-                        transition: transform 0.3s ease-in-out;
-                        color: $red;
-                    }
-                }
-
-                &:before {
-                    content: "";
-                    width: 101%;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    background-color: $bg   ;
-                    transform: translateX(100%);
-                    transition: transform 0.2s ease-in-out;
-
-                }
-                &:hover::before {
-                    animation: .2s ease-in-out;
-                    transform: translateX(0);
-                }
-                &:hover {
-                    color: $red;
-                    border: 2px solid $red;
-                }
-            }
-        }
-    }
-    &__other {
-        font-family: $poppins-regular;
-        font-style: italic;
-        font-weight: 400;
-        text-align: center;
     }
 }
+
+

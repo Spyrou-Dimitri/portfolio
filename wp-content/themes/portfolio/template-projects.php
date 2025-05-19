@@ -36,7 +36,7 @@ $current_filter = $taxonomy_filter;
             <?= get_field('projects-title') ?>
         </h2>
         <div class="projectsHome__container">
-            <a href="<?= esc_url(get_permalink()); ?>"
+            <a href="<?= get_permalink(); ?>"
                class="<?= ($current_filter === '') ? 'is_active ctaTagNoHoverable' : 'ctaTag '; ?>">
                 <span>
                 <?= __('Tout'); ?>
@@ -46,7 +46,7 @@ $current_filter = $taxonomy_filter;
 
             <?php foreach ($terms as $term): ?>
                 <?php $is_active = ($current_filter === $term->slug) ? 'is_active ctaTagNoHoverable' : 'ctaTag'; ?>
-                <a href="<?= esc_url(get_permalink()) . '?filter=' . $term->slug; ?>"
+                <a href="<?= get_permalink() . '?filter=' . $term->slug; ?>"
                    class="<?= $is_active; ?>">
                     <span>
                     <?= esc_html($term->name); ?>
@@ -69,7 +69,15 @@ $current_filter = $taxonomy_filter;
                 <a class="projectCard__link" href="<?= get_the_permalink() ?>"><span
                             class="sro">Consulter <?= get_the_title() ?></span></a>
                 <div>
-                    <?= get_the_post_thumbnail(null, 'medium', ['class' => 'resizeImg']) ?>
+                    <?php
+                    $thumbnail_id = get_post_thumbnail_id();
+                    $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true)
+                    ?>
+                    <?= get_the_post_thumbnail(null, 'medium', [
+                        'class' => 'resizeImg',
+                        'alt' => $alt_text,
+                        'sizes' => '(min-width: 817px) 350px ,100vw',
+                    ]); ?>
                     <h3 class="projectCard__title"><?= get_the_title() ?></h3>
                 </div>
             </article>

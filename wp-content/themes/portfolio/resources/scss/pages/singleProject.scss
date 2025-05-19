@@ -3,9 +3,8 @@
 }
 
 .project {
-    max-width: 1200px;
-    margin: auto;
-    padding: 44px 25px;
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +19,7 @@
     }
 
     &__comebackLink {
+        border-bottom: 2px solid transparent;
         font-family: $poppins-regular;
         font-size: 20px;
         color: $red;
@@ -36,45 +36,28 @@
         }
 
     }
+
     &__containerLinks {
         display: flex;
-        justify-content: space-evenly;
-        gap: 50px;
+        gap: 5rem;
         margin-top: 3em;
     }
 }
-%section-shared {
-    padding: 44px 25px;
-    display: flex;
-    max-width: 1200px;
-    margin: auto;
-    flex-direction: column;
-    gap: 50px;
-}
-.resume, .guideLine, .palette {
-    @extend %section-shared;
+
+.resume, .guideLine {
     @media (min-width: $medium-screen) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
-        gap: 3em;
+        gap: 10rem;
         align-items: center;
     }
-    h2 {
-        font-family: $playfair-bold;
-        font-weight: 700;
-        font-size: 39px;
-        color: $red;
-    }
+
     &__content {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+
 
         &__tools {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+
 
             &__list {
                 display: flex;
@@ -85,22 +68,6 @@
                     height: auto;
                 }
             }
-        }
-
-
-
-        &__desc {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-
-            &__paragraph {
-                font-family: $poppins-regular;
-                font-size: 19px;
-                color: $red;
-                line-height: 1.4;
-            }
-
         }
 
         &__img {
@@ -116,19 +83,6 @@
         flex-direction: column;
         gap: 20px;
 
-        &__title {
-            font-family: $playfair-bold;
-            font-weight: 700;
-            font-size: 39px;
-            color: $red;
-        }
-
-        &__paragraph {
-            font-family: $poppins-regular;
-            font-size: 19px;
-            color: $red;
-            line-height: 1.4;
-        }
 
     }
 
@@ -140,6 +94,7 @@
         }
     }
 }
+
 .resume {
     @media (min-width: $medium-screen) {
         display: grid;
@@ -147,7 +102,14 @@
         justify-content: center;
 
     }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
 }
+
 .guideLine {
     @media (min-width: $medium-screen) {
         display: grid;
@@ -158,13 +120,9 @@
         @media (min-width: $medium-screen) {
             grid-area: content;
         }
-        &__paragraph {
-            font-family: $poppins-regular;
-            font-size: 19px;
-            color: $red;
-            line-height: 1.4;
-        }
+
     }
+
     &__img {
         @media (min-width: $medium-screen) {
             grid-area: img;
@@ -172,70 +130,74 @@
         }
     }
 }
+
 .palette {
+    display: flex;
+    flex-direction: column;
     @media (min-width: $medium-screen) {
-        display: flex;
-        align-items: flex-start;
+
     }
+
     &__list {
-        display: grid;
-        grid-auto-flow: column;
-        gap: 6em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 4rem;
+
         &__item {
+            margin: auto;
             position: relative;
+            width: 10rem;
+            min-height: 10rem;
+            border-radius: 50%;
             cursor: pointer;
-            transition: all 0.1s ease-in-out;
-            display: flex;
-            justify-content: center;
+            &:before {
+                transform: scale(0);
+                transform-origin: center;
+                opacity: 0;
+                content: "";
+                height: 10rem;
+                border-radius: 50%;
+                width: 10rem;
+                display: block;
+                background-color: black;
+                transition: .2s linear;
+
+
+            }
+            &:hover::before {
+                opacity: .5;
+                transition: .2s linear;
+                transform: scale(1);
+            }
             &:hover span {
+                transition: .2s ease-in-out;
                 opacity: 1;
             }
 
+
+
+
             span {
-                opacity: 0;
-                color: white;
-                font-size: 35px;
-                transform-origin: center;
-                position: absolute;
-                width: 100%;
-                top: 48%;
-                left: 0;
-                text-align: center;
-            }
-
-            &:hover {
-                transition: all 0.1s ease-in-out;
-                transform: scale(1.1);
-            }
-
-            svg {
-                width: 100%;
-            }
-            &:before {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                top: 0;
-                margin: auto;
-                left: 0;
+                transition: .2s ease-in-out;
+                font-size: 1.5rem;
                 font-family: $poppins-regular;
                 color: white;
-                text-align: center;
-                content: "";
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                background-color: black;
                 opacity: 0;
-                transition: all 0.1s ease-in-out;
+                transform: translateY(-50%) translateX(-50%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: auto;
+                border-radius: 50%;
+
             }
-            &:hover::before {
-                opacity: .7;
-                transition: all 0.1s ease-in-out;
-            }
+
+
         }
     }
+
     &__paragraph {
         font-family: $poppins-italic;
         text-align: center;
@@ -243,15 +205,18 @@
         line-height: 1.4;
         font-size: 20px;
         margin: auto;
+
         span {
             display: block;
         }
     }
 }
+
 .projectStep {
     max-width: 1200px;
     margin: auto;
     padding: 30px 25px;
+
     &__title {
         font-family: $playfair-bold;
         font-weight: 700;
@@ -265,4 +230,16 @@
         @include containerWithBalls
     }
 }
-
+.gallery {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 2rem;
+        &__item {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

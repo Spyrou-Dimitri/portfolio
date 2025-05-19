@@ -14,14 +14,14 @@
 <body>
 <header>
     <h1 class="sro">
-        <?= get_the_title('58') ?>
+        <?= get_actual_title_page() ?>
     </h1>
     <div class="header__containner">
         <nav class="nav">
             <h2 class="nav__title sro">
                 <?= wp_get_nav_menu_name("header_menu") ?>
             </h2>
-            <a class="nav__link" href="#" title="Vers l'accueil">Dim</a>
+            <a class="nav__link" href="<?= home_url() ?>" title="Vers l'accueil">Dim</a>
             <input type="checkbox" name="burger" id="burger__button">
             <label for="burger__button" class="sro">Menu dépliant</label>
             <div class="burger__wrapper">
