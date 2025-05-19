@@ -3,7 +3,7 @@ get_header();
 
 ?>
 <div class="bgAbout">
-    <section class="about">
+    <section class="about" data-animation="appear">
         <?php if (have_posts()): while (have_posts()):
         the_post(); ?>
         <h2 class="about__title">
@@ -34,7 +34,13 @@ get_header();
                 <?php if (have_rows('career')) : ?>
                     <?php while (have_rows('career')) : the_row(); ?>
                         <li class="career__container__list__items">
-                            <time class="career__container__list__items__date"><?= get_sub_field('course-time') ?></time>
+                            <time class="career__container__list__items__date">
+                                <?= get_sub_field('course-time') ?>
+                                <div class="career__container__list__items__date__billard">
+                                    <img src="/wp-content/themes/portfolio/resources/img/cue.svg"
+                                         alt="La canne du billard">
+                                </div>
+                            </time>
                             <h3 class="career__container__list__items__title"><?= get_sub_field('course-name') ?></h3>
                         </li>
                     <?php endwhile; ?>
@@ -50,22 +56,25 @@ get_header();
             <h2 class="step__title">
                 <?= get_field("wayOfWorking-title") ?>
             </h2>
-            <ul class="step__list">
+            <div class="step__container">
                 <?php if (have_rows('wayOfWorking-list')) : ?>
                     <?php while (have_rows('wayOfWorking-list')) : the_row(); ?>
 
-                        <li class="step__list__items">
-                            <img class="step__list__items__img" src="<?= get_sub_field('wayOfWorking-ball') ?>"
+                        <article class="step__container__article">
+                            <img class="step__container__article__img" data-animation="appearLeftBall"
+                                 src="<?= get_sub_field('wayOfWorking-ball') ?>"
                                  alt="<?= get_sub_field('ball-alt') ?>">
-                            <h3 class="step__list__items__title"><?= get_sub_field('wayOfWorking-titleStep') ?></h3>
-                            <p class="step__list__items__paragraph"><?= get_sub_field('wayOfWorking-desc') ?></p>
-                        </li>
+                            <h3 class="step__container__article__title"
+                                data-animation="appear"><?= get_sub_field('wayOfWorking-titleStep') ?></h3>
+                            <p class="step__container__article__paragraph"
+                               data-animation="appear"><?= get_sub_field('wayOfWorking-desc') ?></p>
+                        </article>
 
                     <?php endwhile; ?>
                 <?php else : ?>
                     <p>Aucune donnée trouvée.</p>
                 <?php endif; ?>
-            </ul>
+            </div>
         </section>
     </div>
     <section class="tools">

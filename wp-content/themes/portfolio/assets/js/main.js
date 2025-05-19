@@ -1,13 +1,120 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./wp-content/themes/portfolio/resources/js/main.js":
 /*!**********************************************************!*\
   !*** ./wp-content/themes/portfolio/resources/js/main.js ***!
   \**********************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-console.log("test");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./settings */ "./wp-content/themes/portfolio/resources/js/settings.js");
+/* harmony import */ var _observers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./observers */ "./wp-content/themes/portfolio/resources/js/observers.js");
+
+
+_observers__WEBPACK_IMPORTED_MODULE_1__.observers.init();
+
+/***/ }),
+
+/***/ "./wp-content/themes/portfolio/resources/js/observers.js":
+/*!***************************************************************!*\
+  !*** ./wp-content/themes/portfolio/resources/js/observers.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   observers: () => (/* binding */ observers)
+/* harmony export */ });
+/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./settings */ "./wp-content/themes/portfolio/resources/js/settings.js");
+
+var observers = {
+  appearLeftElements: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearLeftClass, "']")),
+  appearElements: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearClass, "']")),
+  appearLeftBallElements: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearLeftBallCLass, "']")),
+  init: function init() {
+    this.appearElements.forEach(function (element) {
+      element.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
+    this.appearLeftElements.forEach(function (element) {
+      element.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
+    this.appearLeftBallElements.forEach(function (element) {
+      element.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
+    this.appearObserver = new IntersectionObserver(this.appearAnimate, {
+      threshold: 0.5
+    });
+    this.appearLeftObserver = new IntersectionObserver(this.appearLeftAnimate, {
+      threshold: 0.5
+    });
+    this.appearLeftBallObserver = new IntersectionObserver(this.appearLeftBallAnimate, {
+      threshold: 0.5
+    });
+    this.observerAction();
+  },
+  appearLeftAnimate: function appearLeftAnimate(elements) {
+    var visibleElements = elements.filter(function (el) {
+      return el.isIntersecting;
+    }).slice().reverse();
+    visibleElements.forEach(function (element, index) {
+      element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearLeftClass);
+      element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
+  },
+  appearLeftBallAnimate: function appearLeftBallAnimate(elements) {
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearLeftBallCLass);
+        element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+      }
+    });
+  },
+  appearAnimate: function appearAnimate(elements) {
+    var index = 0;
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        setTimeout(function () {
+          element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearClass);
+          element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+        }, index * 200);
+        index++;
+      }
+    });
+  },
+  observerAction: function observerAction() {
+    var _this = this;
+    this.appearLeftBallElements.forEach(function (element) {
+      _this.appearLeftBallObserver.observe(element);
+    });
+    this.appearElements.forEach(function (element) {
+      _this.appearObserver.observe(element);
+    });
+    this.appearLeftElements.forEach(function (element) {
+      _this.appearLeftObserver.observe(element);
+    });
+  }
+};
+
+/***/ }),
+
+/***/ "./wp-content/themes/portfolio/resources/js/settings.js":
+/*!**************************************************************!*\
+  !*** ./wp-content/themes/portfolio/resources/js/settings.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   settings: () => (/* binding */ settings)
+/* harmony export */ });
+var settings = {
+  appearClass: 'appear',
+  appearLeftClass: 'appearLeft',
+  noOpacityClass: 'opacity_none',
+  appearLeftBallCLass: 'appearLeftBall'
+};
 
 /***/ }),
 
@@ -17,7 +124,6 @@ console.log("test");
   \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -83,6 +189,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

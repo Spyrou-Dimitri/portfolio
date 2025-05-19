@@ -11,7 +11,7 @@
             <p>
                 Dans ce cas, prenez contact avec moi via le bouton ci-dessous !
             </p>
-            <a href="#" title="Vers la page de contact" hreflang="fr" class="contact__link"><span>Contactez-moi</span></a>
+            <a href="#" title="Vers la page de contact" hreflang="fr" class="ctaPrimary"><span>Contactez-moi</span></a>
         </div>
         <nav class="footer__container__section secondNav">
             <h3 class="footer__container__section__title">
@@ -48,7 +48,7 @@
             <ul class="footer__container__section__list">
                 <?php foreach (pf_get_navigation_links('usefull_links_menu') as $link): ?>
                     <li class="footer__container__section__list__items">
-                        <a class="footer__container__section__list__items__links" href="<?= $link->url ?>W"
+                        <a class="footer__container__section__list__items__links" href="<?= $link->url ?>"
                            title="Vers la page <?= $link->label ?>" target="_blank"><?= $link->label ?></a>
                     </li>
                 <?php endforeach; ?>
@@ -56,8 +56,7 @@
         </div>
     </section>
 </footer>
-
-<script src="resources/js/main.js" defer></script>
+<script type="module" src="<?= pf_asset('js/main.js') ?>" defer></script>
 </body>
 
 </html>

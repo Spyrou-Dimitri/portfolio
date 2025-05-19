@@ -1,0 +1,123 @@
+.opacity_none {
+    opacity: 0;
+}
+.appear {
+    transform-origin: center ;
+    animation: .5s appear linear;
+
+}
+@keyframes appear {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+.appearLeft:nth-child(1) {
+    animation: appearLeftMobile 2.5s linear;
+    @media (min-width: $medium-screen) {
+        animation: appearLeftMediumScreen 2.5s linear;
+    }
+}
+
+.appearLeft:nth-child(2) {
+    animation: appearLeftMobile 2.5s linear;
+    @media (min-width: $medium-screen) {
+        animation: appearLeftMediumScreen 2s linear;
+    }
+}
+
+
+.appearLeft:nth-child(3) {
+    animation: appearLeftMobile 2.5s linear;
+    @media (min-width: $medium-screen) {
+        animation: appearLeftMediumScreen 1.5s linear;
+    }
+}
+
+.appearLeft:nth-child(4) {
+    animation: appearRightMobile 1.5s linear;
+    @media (min-width: $medium-screen) {
+        animation: appearRightMediumScreen 1.5s linear;
+    }
+}
+.appearLeft:nth-child(5) {
+    animation: appearRightMobile 1.5s linear;
+    @media (min-width: $medium-screen) {
+        animation: appearRightMediumScreen 2s linear;
+    }
+}
+.appearLeft:nth-child(6) {
+    animation: appearRightMobile 1.5s linear;
+    @media (min-width: $medium-screen) {
+        animation: appearRightMediumScreen 2.5s linear;
+    }
+}
+
+@keyframes appearLeftMobile {
+    0% {
+        transform: translateX(-500%) rotate(0);
+    }
+    50% {
+        transform: translateX(25px) rotate(450deg);
+    }
+    100% {
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+@keyframes appearRightMobile {
+    0% {
+        transform: translateX(500%) rotate(0);
+    }
+    50% {
+        transform: translateX(-25px) rotate(-450deg);
+    }
+    100% {
+        transform: translateX(0) rotate(-360deg);
+    }
+}
+
+@keyframes appearLeftMediumScreen {
+    0% {
+        transform: translateX(-500%) rotate(0);
+    }
+    75% {
+        transform: translateX(6em) rotate(450deg);
+    }
+    100% {
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+@keyframes appearRightMediumScreen {
+    0% {
+        transform: translateX(500%) rotate(0);
+    }
+    75% {
+        transform: translateX(-6em) rotate(-450deg);
+    }
+    100% {
+        transform: translateX(0) rotate(-360deg);
+    }
+}
+.appearLeftBall {
+    animation: appearLeftBall 1.5s ease-in-out;
+
+}
+@keyframes appearLeftBall {
+    0% {
+        transform: translateX(-50vw) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(360deg);
+
+    }
+
+}

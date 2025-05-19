@@ -98,10 +98,12 @@
                 font-size: 24px;
                 text-align: right;
                 &__date {
+                    position: relative;
                     border-radius: 2px;
                     display: block;
-                    padding-bottom: 10px;
-                    border-bottom:  3px solid $red;
+                    &__billard {
+                        margin-top: 20px;
+                    }
                 }
                 &__title {
 
@@ -131,66 +133,8 @@
         color: #5F021F;
         margin-bottom: 20px;
     }
-    &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        &__items:nth-child(even) {
-            @media (min-width: $wide-screen) {
-                grid-template-areas: "titre image"
-                                     "paragraph image";
-                margin-left: auto;
-
-            }
-        }
-        &__items {
-            padding: 20px 0;
-            border-top: 3px solid $red;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            @media (min-width: $medium-screen) {
-                display: grid;
-                grid-auto-rows: auto;
-
-            }
-            @media (min-width: $wide-screen) {
-                grid-template-areas: "image titre"
-                                     "image paragraph";
-                max-width: 60%;
-
-            }
-            &__img {
-
-                width: 100px;
-                height: auto;
-                @media (min-width: $medium-screen) {
-                    align-self: center;
-                    justify-self: center;
-                }
-                @media (min-width: $wide-screen) {
-                    grid-area: image;
-                }
-            }
-            &__title {
-                font-family: $playfair-bold;
-                font-weight: 700;
-                font-size: 29px;
-                color: #5F021F;
-                @media (min-width: $wide-screen) {
-                    grid-area: titre;
-                }
-            }
-            &__paragraph {
-                font-family:$poppins-regular;
-                font-size: 19px;
-                line-height: 1.4;
-                color: $red;
-                @media (min-width: $wide-screen) {
-                    grid-area: paragraph;
-                }
-            }
-        }
+    &__container {
+        @include containerWithBalls;
     }
 }
 .tools {
@@ -209,16 +153,19 @@
     &__list {
 
         display: flex;
+        width: calc(198px * 14);
         align-items: center;
         animation: scroll 13s linear infinite;
         @keyframes scroll {
-            from { transform: translateX(0); }
-            to {
-                transform: translateX(-100%);
+            0% { transform: translateX(0); }
+            100% {
+                transform: translateX(calc(-198px * 7));
             }
         }
         &__items {
             margin: 0 4em;
+            width: 70px;
+            height: auto;
 
             &__img {
                 width: 70px;
@@ -228,4 +175,15 @@
     }
 }
 
+@keyframes appearLeftBall {
+    0% {
+        transform: translateX(-50vw) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(360deg);
+
+    }
+    
+}
 

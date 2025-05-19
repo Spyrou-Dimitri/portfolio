@@ -1,47 +1,84 @@
-<?php /* Template Name: Page "Projets"Home */
-get_header() ?>
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
-    <div class="bg">
-        <section class="projectsHome">
-            <h2 class="projectsHome__title">
-                <?= get_field('projects-title') ?>
-            </h2>
-            <div class="projectsHome__container">
-                <a href="#" title="Afficher tous mes projets" class="projectsHome__container__link">Tout</a>
-                <a href="#" title="Afficher seulement mes projets Web" class="projectsHome__container__link">Web</a>
-                <a href="#" title="Afficher seulement mes projets 3D" class="projectsHome__container__link">3D</a>
-                <a href="#" title="Afficher seulement mes design" class="projectsHome__container__link">Design</a>
-                <a href="#" title="Afficher seulement mes applications mobiles" class="projectsHome__container__link">Mobile</a>
-            </div>
-        </section>
+<?php /* Template Name: Template Projects */ ?>
+<?php get_header(); ?>
+
+<?php
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+$taxonomy_filter = isset($_GET['filter']) ? sanitize_text_field($_GET['filter']) : '';
+
+$args = [
+    'post_type' => 'projects',
+    'paged' => $paged,
+];
+
+if ($taxonomy_filter !== '') {
+    $args['tax_query'] = [
+        [
+            'taxonomy' => 'project_types',
+            'field' => 'slug',
+            'terms' => $taxonomy_filter,
+        ]
+    ];
+}
+
+$query = new WP_Query($args);
+
+// Récupérer les termes de la taxonomie
+$terms = get_terms([
+    'taxonomy' => 'project_types',
+    'hide_empty' => false,
+]);
+
+$current_filter = $taxonomy_filter;
+?>
+<div class="bg">
+    <section class="projectsHome">
+        <h2 class="projectsHome__title">
+            <?= get_field('projects-title') ?>
+        </h2>
+        <div class="projectsHome__container">
+            <a href="<?= esc_url(get_permalink()); ?>"
+               class="<?= ($current_filter === '') ? 'is_active ctaTagNoHoverable' : 'ctaTag '; ?>">
+                <span>
+                <?= __('Tout'); ?>
+
+                </span>
+            </a>
+
+            <?php foreach ($terms as $term): ?>
+                <?php $is_active = ($current_filter === $term->slug) ? 'is_active ctaTagNoHoverable' : 'ctaTag'; ?>
+                <a href="<?= esc_url(get_permalink()) . '?filter=' . $term->slug; ?>"
+                   class="<?= $is_active; ?>">
+                    <span>
+                    <?= esc_html($term->name); ?>
+
+                    </span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+</div>
+
+
+<section class="projectsList">
+    <h2 class="projectsList__title"><?= __('Tous mes projets'); ?></h2>
+
+    <div class="projectsList__container">
+        <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
+            <article class="projectCard" data-animation="appearLeft">
+                <a class="projectCard__link" href="<?= get_the_permalink() ?>"><span
+                            class="sro">Consulter <?= get_the_title() ?></span></a>
+                <div>
+                    <?= get_the_post_thumbnail(null, 'medium', ['class' => 'resizeImg']) ?>
+                    <h3 class="projectCard__title"><?= get_the_title() ?></h3>
+                </div>
+            </article>
+        <?php endwhile; else: ?>
+            <p><?= __('Aucun projet trouvé.'); ?></p>
+        <?php endif; ?>
     </div>
 
-    <section class="projectsList">
-        <h2 class="projectsList__title">
-            Tous mes projets
-        </h2>
-        <div class="projectsList__container">
-            <?php
-            $projects = new WP_Query([
-                'post_type' => 'projects',
-                'order' => 'DESC',
-                'post_per_page' => 3,
-            ]);
-            if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
-                <article class="projectsList__container__items">
-                    <?= get_the_post_thumbnail(attr: ['class' => 'resizeImg']) ?>
-                    <h3 class="projectsList__container__items__title"> <?= get_the_title() ?></h3>
-                    <p class="projectsList__container__items__paragraph"><?= get_the_excerpt() ?></p>
-                    <a class="projectsList__container__items__link" href="<?= get_the_permalink() ?>" title="Voir le projet <?= get_the_title() ?>"><span>Voir le projet</span></a>
-                </article>
-            <?php endwhile; endif; ?>
-        </div>
-        <p class="projectsList__other">
-            Bien d'autres à venir
-        </p>
-    </section>
-<?php endwhile; endif; ?>
-<section>
+</section>
 
-
-    <?php get_footer() ?>
+<?php wp_reset_postdata(); ?>
+<?php get_footer(); ?>

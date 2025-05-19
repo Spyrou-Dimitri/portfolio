@@ -59,7 +59,24 @@ register_post_type('projects', [
         'slug' => 'projets',
     ],
     'supports' => ['title','excerpt','editor','thumbnail'],
+    'taxonomies' => ['project_types'],
 ]);
+register_taxonomy('project_types', ['projects'], [
+    'labels' => [
+        'name' => 'Les types de projets',
+        'singular' => 'Type de voyage'
+    ],
+    'description' => 'Types de projets',
+    'public' => true,
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'show_tagcloud' => false,
+    'rewrite' => ['slug' => 'type-de-voyage'],
+
+],
+);
+
 
 function create_site_options_page() {
     if (function_exists('acf_add_options_page')) {

@@ -2,18 +2,18 @@
 <?php
 if (have_posts()):while (have_posts()): the_post(); ?>
     <div class="bgProject">
-        <section class="project">
+        <section class="project" data-animation="appear">
             <h2 class="project__title">
                 <?= get_field('project-title') ?>
             </h2>
             <a href="#" title="Retour à la page de projets" class="project__comebackLink">Retour aux projets</a>
             <div class="project__containerLinks">
-                <a href="#" title="Retourner à la page de projet" class="project__link siteButton"> <span>Découvrir le site</span></a>
-                <a href="#" title="Découvrir le site" class="project__link githubButton"><span>Projet Github</span></a>
+                <a href="#" title="Retourner à la page de projet" class="ctaPrimary"> <span>Découvrir le site</span></a>
+                <a href="#" title="Découvrir le site" class="ctaSecondary"><span>Projet Github</span></a>
             </div>
         </section>
     </div>
-    <section class="resume">
+    <section class="resume" data-animation="appear">
         <div class="resume__content">
             <div class="resume__content__desc">
                 <h2 class="resume__content__desc__title">
@@ -42,7 +42,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
         </div>
     </section>
     <div>
-        <section class="guideLine">
+        <section class="guideLine" data-animation="appear">
             <div class="guideLine__content">
                 <h2 class="guideLine__content__title">
                     <?= get_field('directive-title') ?>
@@ -58,24 +58,24 @@ if (have_posts()):while (have_posts()): the_post(); ?>
         </section>
         <?php
         if (have_rows("palette-list")): ?>
-            <section class="palette">
+            <section class="palette" data-animation="appear">
                 <h2 class="palette__title">
                     <?= get_field('palette-title') ?>
                 </h2>
                 <ul class="palette__list">
                     <?php while (have_rows('palette-list')): the_row() ?>
                         <li class="palette__list__item" data-palette="<?= get_sub_field('palette-item') ?>">
+                            <span>
+                                <?= get_sub_field('palette-item') ?>
+                            </span>
                             <svg fill="<?= get_sub_field('palette-item') ?>"
                                  id="<?= get_sub_field('palette-item') ?>"
                                  data-name="<?= get_sub_field('palette-item') ?>" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 356.98 357.05">
                                 <defs>
-
                                     <style>
-
                                         .cls-33 {
                                             fill: #fff;
-
                                         }
                                     </style>
                                 </defs>
@@ -111,25 +111,27 @@ if (have_posts()):while (have_posts()): the_post(); ?>
             </section>
         <?php endif; ?>
     </div>
-    <section>
-        <h2>
+    <section class="projectStep">
+        <h2 class="projectStep__title">
             <?= get_field('step') ?>
         </h2>
-        <ol>
+        <div class="projectStep__container">
             <?php
             if (have_rows('step-list')): while (have_rows('step-list')): the_row(); ?>
-                <li>
-                    <article>
-                        <h3>
-                            <?= get_sub_field('step-title') ?>
-                        </h3>
-                        <p>
-                            <?= get_sub_field('step-desc') ?>
-                        </p>
-                    </article>
-                </li>
+
+                <article class="projectStep__container__article">
+                    <?php $ball = get_sub_field('step-img'); ?>
+                    <img data-animation="appearLeftBall" class="projectStep__container__article__img" src="<?= $ball['url'] ?>" alt="<?= $ball['alt']?>">
+                    <h3 data-animation="appear" class="projectStep__container__article__title">
+                        <?= get_sub_field('step-title') ?>
+                    </h3>
+                    <p data-animation="appear" class="projectStep__container__article__paragraph">
+                        <?= get_sub_field('step-desc') ?>
+                    </p>
+                </article>
+
             <?php endwhile; endif; ?>
-        </ol>
+        </div>
     </section>
 <?php endwhile; endif; ?>
 

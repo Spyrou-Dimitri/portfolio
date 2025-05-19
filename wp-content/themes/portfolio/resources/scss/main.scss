@@ -5,8 +5,12 @@
 @import "global/global";
 
 //Import Components
+@import "components/cta";
+@import "components/animationObserver";
+@import "components/projectCard";
 @import "components/header";
 @import "components/footer";
+@import "components/mixin";
 
 //Import pages
 @import "pages/home";

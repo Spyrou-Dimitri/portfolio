@@ -11,30 +11,32 @@ get_header();
             <img src="/wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard">
         </div>
     </div>
-    <h2 class="hero__title">
+    <div class="hero__container" data-animation="appear">
+        <h2 class="hero__title">
         <span class="hero__title__before">
             Portfolio
         </span>
-        Spyrou Dimitri
-        <span class="hero__title__after">
+            Spyrou Dimitri
+            <span class="hero__title__after">
             Web développeur
         </span>
-    </h2>
-    <p class="hero__quote">
-        "Coder, c’est comme jouer au billard : précision, stratégie et un bon rebond pour atteindre la cible !"
-    </p>
-    <div class="hero__container__cta">
-        <a class="hero__container__cta__link ctaAbout" href="<?= get_the_permalink('about') ?>" title=""><span>Me
+        </h2>
+        <p class="hero__quote" style="white-space: normal">
+            "Coder, c’est comme jouer au billard : précision, stratégie et un bon rebond pour atteindre la cible &nbsp;!"
+        </p>
+        <div class="hero__container__cta">
+            <a class="ctaPrimary" href="<?= get_the_permalink('about') ?>" title=""><span>Me
             découvrir</span></a>
-        <a class="hero__container__cta__link ctaProjects" href="" title=""><span>
+            <a class="ctaSecondary" href="" title=""><span>
                 Mes projets
             </span></a>
+        </div>
     </div>
     <div class="container__botBillards">
-        <div class="container__botBillards__cue">
+        <div class="container__botBillards__cue" id="test">
             <img src="/wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard">
         </div>
-        <div class="container__botBillards__ball">
+        <div class="container__botBillards__ball" id="test2">
             <img src="/wp-content/themes/portfolio/resources/img/ball8.svg" alt="La bille noir du billard" width="100"
                  height="100">
         </div>
@@ -57,22 +59,23 @@ get_header();
             'posts_per_page' => 3,
         ]);
         if ($projects->have_posts()): while ($projects->have_posts()):$projects->the_post(); ?>
-            <article class="lastProjects__container__article">
+            <article class="projectCard" data-animation="appearLeft">
+                <a class="projectCard__link" href="<?= get_the_permalink() ?>"><span class="sro">Consulter <?= get_the_title() ?></span></a>
+                <div>
                     <?= get_the_post_thumbnail(attr: ['class' => 'resizeImg']) ?>
-                <h3 class="lastProjects__container__article__title">
-                    <?= get_the_title() ?>
-                </h3>
-                <p class="lastProjects__container__article__paragraph">
-                    <?= get_the_excerpt() ?>
-                </p>
-                <a href="<?= get_the_permalink() ?>" title="Découvrir le projet <?= get_the_title()?>" class="lastProjects__container__article__cta">
-                    <span>Voir le projet</span></a>
+                    <h3 class="projectCard__title">
+                        <?= get_the_title() ?>
+                    </h3>
+                </div>
+
+
+
             </article>
         <?php
 //on ferme 'la boucle' (The Loop)
         endwhile;
         else : ?>
-            <p>Je n'ai pas de projet récents à montrer pour le moment</p>
+            <p>Il n'y a pas de maison à afficher</p>
         <?php endif; ?>
     </div>
 
