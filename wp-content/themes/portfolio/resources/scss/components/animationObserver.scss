@@ -18,44 +18,28 @@
 
 }
 
-.appearLeft:nth-child(1) {
-    animation: appearLeftMobile 2.5s linear;
-    @media (min-width: $medium-screen) {
-        animation: appearLeftMediumScreen 2.5s linear;
-    }
-}
+$animations: (
+        1: 2.5s,
+        2: 2s,
+        3: 1.5s,
+        4: 1.5s,
+        5: 2s,
+        6: 2.5s
+);
 
-.appearLeft:nth-child(2) {
-    animation: appearLeftMobile 2.5s linear;
-    @media (min-width: $medium-screen) {
-        animation: appearLeftMediumScreen 2s linear;
-    }
-}
-
-
-.appearLeft:nth-child(3) {
-    animation: appearLeftMobile 2.5s linear;
-    @media (min-width: $medium-screen) {
-        animation: appearLeftMediumScreen 1.5s linear;
-    }
-}
-
-.appearLeft:nth-child(4) {
-    animation: appearRightMobile 1.5s linear;
-    @media (min-width: $medium-screen) {
-        animation: appearRightMediumScreen 1.5s linear;
-    }
-}
-.appearLeft:nth-child(5) {
-    animation: appearRightMobile 1.5s linear;
-    @media (min-width: $medium-screen) {
-        animation: appearRightMediumScreen 2s linear;
-    }
-}
-.appearLeft:nth-child(6) {
-    animation: appearRightMobile 1.5s linear;
-    @media (min-width: $medium-screen) {
-        animation: appearRightMediumScreen 2.5s linear;
+@for $i from 1 through 6 {
+    .appearLeft:nth-child(#{$i}) {
+        @if $i <= 3 {
+            animation: appearLeftMobile 2.5s linear;
+            @media (min-width: $medium-screen) {
+                animation: appearLeftMediumScreen map-get($animations, $i) linear;
+            }
+        } @else {
+            animation: appearRightMobile 1.5s linear;
+            @media (min-width: $medium-screen) {
+                animation: appearRightMediumScreen map-get($animations, $i) linear;
+            }
+        }
     }
 }
 

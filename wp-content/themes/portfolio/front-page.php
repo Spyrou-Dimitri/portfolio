@@ -22,7 +22,7 @@ get_header();
         </span>
         </h2>
         <p class="hero__quote" style="white-space: normal">
-            "Coder, c’est comme jouer au billard : précision, stratégie et un bon rebond pour atteindre la cible &nbsp;!"
+            "Coder, c’est comme jouer au billard : précision, stratégie et un bon rebond pour atteindre la cible&nbsp;!"
         </p>
         <div class="hero__container__cta">
             <a class="ctaPrimary" href="<?= get_the_permalink('about') ?>" title=""><span>Me
