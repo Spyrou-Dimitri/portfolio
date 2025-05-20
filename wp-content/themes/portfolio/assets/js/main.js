@@ -33,7 +33,17 @@ var observers = {
   appearLeftElements: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearLeftClass, "']")),
   appearElements: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearClass, "']")),
   appearLeftBallElements: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearLeftBallCLass, "']")),
+  comingLeftBallsElement: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.comingLeftBallsClass, "']")),
+  comingRightBallsElement: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.comingRightBallsClass, "']")),
+  cueCareerReverseElement: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.cueCareerReverse, "']")),
+  cueCareerNormalElement: document.querySelectorAll("[data-animation='".concat(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.cueCareerNormal, "']")),
   init: function init() {
+    this.comingLeftBallsElement.forEach(function (element) {
+      element.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
+    this.comingRightBallsElement.forEach(function (element) {
+      element.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
     this.appearElements.forEach(function (element) {
       element.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
     });
@@ -42,6 +52,36 @@ var observers = {
     });
     this.appearLeftBallElements.forEach(function (element) {
       element.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
+    this.cueCareerReverseObserver = new IntersectionObserver(this.cueCareerReverseAnimate, {
+      root: null,
+      rootMargin: "-25% 0px -75% 0px",
+      threshold: 0
+    });
+    this.cueCareerNormalObserver = new IntersectionObserver(this.cueCareerNormalAnimate, {
+      root: null,
+      rootMargin: "-25% 0px -75% 0px",
+      threshold: 0
+    });
+    this.comingLeftBallsObserver = new IntersectionObserver(this.comingLeftBallsAnimate, {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0
+    });
+    this.leavingLeftBallsObserver = new IntersectionObserver(this.leavingLeftBallsAnimate, {
+      root: null,
+      rootMargin: "-25% 0px -75% 0px",
+      threshold: 0
+    });
+    this.comingRightBallsObserver = new IntersectionObserver(this.comingRightBallsAnimate, {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0
+    });
+    this.leavingRightBallsObserver = new IntersectionObserver(this.leavingRightBallsAnimate, {
+      root: null,
+      rootMargin: "-25% 0px -75% 0px",
+      threshold: 0
     });
     this.appearObserver = new IntersectionObserver(this.appearAnimate, {
       threshold: 0.5
@@ -61,6 +101,52 @@ var observers = {
     visibleElements.forEach(function (element, index) {
       element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.appearLeftClass);
       element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+    });
+  },
+  comingLeftBallsAnimate: function comingLeftBallsAnimate(elements) {
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.comingLeftBallsClass);
+        element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+      }
+    });
+  },
+  leavingLeftBallsAnimate: function leavingLeftBallsAnimate(elements) {
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.comingLeftBallsClass);
+        element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.leavingLeftBallClass);
+      }
+    });
+  },
+  leavingRightBallsAnimate: function leavingRightBallsAnimate(elements) {
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.comingRightBallsClass);
+        element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.leavingRightBallClass);
+      }
+    });
+  },
+  comingRightBallsAnimate: function comingRightBallsAnimate(elements) {
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.comingRightBallsClass);
+        element.target.classList.remove(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.noOpacityClass);
+      }
+    });
+  },
+  cueCareerReverseAnimate: function cueCareerReverseAnimate(elements) {
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.cueCareerReverse);
+      }
+    });
+  },
+  cueCareerNormalAnimate: function cueCareerNormalAnimate(elements) {
+    elements.forEach(function (element) {
+      if (element.isIntersecting) {
+        element.target.classList.add(_settings__WEBPACK_IMPORTED_MODULE_0__.settings.cueCareerNormal);
+      }
     });
   },
   appearLeftBallAnimate: function appearLeftBallAnimate(elements) {
@@ -85,6 +171,20 @@ var observers = {
   },
   observerAction: function observerAction() {
     var _this = this;
+    this.cueCareerReverseElement.forEach(function (element) {
+      _this.cueCareerReverseObserver.observe(element);
+    });
+    this.cueCareerNormalElement.forEach(function (element) {
+      _this.cueCareerNormalObserver.observe(element);
+    });
+    this.comingLeftBallsElement.forEach(function (element) {
+      _this.comingLeftBallsObserver.observe(element);
+      _this.leavingLeftBallsObserver.observe(element);
+    });
+    this.comingRightBallsElement.forEach(function (element) {
+      _this.comingRightBallsObserver.observe(element);
+      _this.leavingRightBallsObserver.observe(element);
+    });
     this.appearLeftBallElements.forEach(function (element) {
       _this.appearLeftBallObserver.observe(element);
     });
@@ -96,6 +196,11 @@ var observers = {
     });
   }
 };
+
+/*
+root: null,
+            rootMargin: "-25% 0px -75% 0px",
+ */
 
 /***/ }),
 
@@ -113,7 +218,13 @@ var settings = {
   appearClass: 'appear',
   appearLeftClass: 'appearLeft',
   noOpacityClass: 'opacity_none',
-  appearLeftBallCLass: 'appearLeftBall'
+  appearLeftBallCLass: 'appearLeftBall',
+  comingLeftBallsClass: 'comingLeftBalls',
+  comingRightBallsClass: 'comingRightBalls',
+  leavingLeftBallClass: 'leavingLeftBalls',
+  leavingRightBallClass: 'leavingRightBalls',
+  cueCareerNormal: 'cueCareerNormal',
+  cueCareerReverse: 'cueCareerReverse'
 };
 
 /***/ }),

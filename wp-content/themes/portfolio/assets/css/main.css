@@ -1012,41 +1012,53 @@ footer {
   font-size: 1em;
 }
 
-.career__container {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  justify-content: center;
-}
 .career__container__list {
   display: flex;
   flex-direction: column;
-  padding: 20px 20px;
-  gap: 200px;
-  border-right: 3px solid #5F021F;
+  gap: 250px;
 }
 .career__container__list__items {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   font-size: 24px;
   text-align: right;
 }
-.career__container__list__items__date {
+.career__container__list__items:nth-child(even) {
+  text-align: left;
+}
+.career__container__list__items:nth-child(even) .cueCareer {
+  right: 130px;
+  left: auto;
+  transform: scaleX(-1) translateY(-50%);
+}
+.career__container__list__items:nth-child(even) .ballCareer {
+  right: 20px;
+  left: auto;
+}
+.career__container__list__items__content {
   position: relative;
-  border-radius: 2px;
-  display: block;
 }
-.career__container__list__items__date__billard {
-  margin-top: 20px;
+.career__container__list__items__content .cueCareer {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 130px;
+  min-height: 100px;
+  transform: translateY(-50%);
 }
-.career__container__img {
-  justify-self: center;
+.career__container__list__items__content .cueCareer img {
+  width: 67.5rem;
+  height: auto;
 }
-.career__container__img img {
+.career__container__list__items__content .ballCareer {
+  position: absolute;
+  top: 0;
+  left: 20px;
   width: 100px;
   height: auto;
 }
-
+.career__container__list__items__content__date {
+  display: block;
+  margin-bottom: 3rem;
+}
 .step__container {
   display: flex;
   flex-direction: column;
@@ -1135,12 +1147,102 @@ footer {
   height: auto;
 }
 
+.comingLeftBalls {
+  animation: comingLeftBalls 1s ease-in-out;
+}
+
+@keyframes comingLeftBalls {
+  from {
+    transform: translateX(-300px) rotate(-720deg);
+  }
+  to {
+    transform: translateX(0) rotate(0);
+  }
+}
+.leavingLeftBalls {
+  animation: leavingLeftBalls 1s ease-in-out forwards;
+}
+
+@keyframes leavingLeftBalls {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  30% {
+    transform: translateX(0) rotate(0);
+  }
+  100% {
+    transform: translateX(-300px) rotate(-720deg);
+  }
+}
+.comingRightBalls {
+  animation: comingRightBalls 1s ease-in-out;
+}
+
+@keyframes comingRightBalls {
+  from {
+    transform: translateX(300px) rotate(720deg);
+  }
+  to {
+    transform: translateX(0) rotate(0);
+  }
+}
+.leavingRightBalls {
+  animation: leavingRightBalls 1s ease-in-out forwards;
+}
+
+@keyframes leavingRightBalls {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  30% {
+    transform: translateX(0) rotate(0);
+  }
+  100% {
+    transform: translateX(300px) rotate(720deg);
+  }
+}
 @keyframes appearLeftBall {
   0% {
     transform: translateX(-50vw) rotate(0deg);
   }
   100% {
     transform: translateX(0) rotate(360deg);
+  }
+}
+.cueCareerNormal {
+  animation: cueCareerNormal 1s linear;
+}
+
+@keyframes cueCareerNormal {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  15% {
+    transform: translateY(-50%) translateX(40px);
+  }
+  30% {
+    transform: translateY(-50%) translateX(-10px);
+  }
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+}
+.cueCareerReverse {
+  animation: cueCareerReverse 1s linear;
+}
+
+@keyframes cueCareerReverse {
+  0% {
+    transform: translateY(-50%) scaleX(-1) translateX(0);
+  }
+  15% {
+    transform: translateY(-50%) scaleX(-1) translateX(40px);
+  }
+  30% {
+    transform: translateY(-50%) scaleX(-1) translateX(-10px);
+  }
+  100% {
+    transform: translateY(-50%) scaleX(-1) translateX(0);
   }
 }
 .bgContact {

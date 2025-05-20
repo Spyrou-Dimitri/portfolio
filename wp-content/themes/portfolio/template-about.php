@@ -33,23 +33,30 @@ get_header();
         <h2 aria-level="2" class="career__title">
             Mon parcours
         </h2>
-        <div class="career__container">
-            <div class="career__container__img">
-                <img src="/wp-content/themes/portfolio/resources/img/ball8.svg" alt="Boule 8 du billard">
-            </div>
             <ul class="career__container__list" itemscope itemtype="https://schema.org/EducationalOccupationalCredential" itemprop="hasCredential">
-                <?php if (have_rows('career')) : ?>
+                <?php if (have_rows('career')) :
+                    $index = 0;
+                    ?>
                     <?php while (have_rows('career')) : the_row(); ?>
                         <li class="career__container__list__items">
-                            <time class="career__container__list__items__date">
-                                <?= get_sub_field('course-time') ?>
-                                <div class="career__container__list__items__date__billard">
+                            <div class="career__container__list__items__content">
+                                <div class="ballCareer" data-animation="<?= $index % 2 === 0 ? 'comingLeftBalls' : 'comingRightBalls' ?>">
+                                    <img src="/wp-content/themes/portfolio/resources/img/ball8.svg" alt="La boule 8 du billard">
+                                </div>
+                                <div class="cueCareer" data-animation="<?= $index % 2 === 0 ? 'cueCareerNormal' : 'cueCareerReverse' ?>">
                                     <img src="/wp-content/themes/portfolio/resources/img/cue.svg"
                                          alt="La canne du billard">
                                 </div>
-                            </time>
-                            <h3 aria-level="3" class="career__container__list__items__title" itemprop="credentialCategory"><?= get_sub_field('course-name') ?></h3>
-                        </li>
+
+                                <time class="career__container__list__items__content__date">
+                                    <?= get_sub_field('course-time') ?>
+
+                                </time>
+                                <h3 aria-level="3" class="career__container__list__items__content__title" itemprop="credentialCategory"><?= get_sub_field('course-name') ?></h3>
+
+                            </div>
+                            </li>
+                <?php $index++;  ?>
                     <?php endwhile; ?>
                 <?php else : ?>
                     <p>Aucune donnée trouvée.</p>
