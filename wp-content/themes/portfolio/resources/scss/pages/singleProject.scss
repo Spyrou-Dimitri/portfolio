@@ -39,12 +39,17 @@
 
     &__containerLinks {
         display: flex;
-        gap: 5rem;
+        gap: 3rem;
+        justify-content: center;
+        flex-wrap: wrap;
         margin-top: 3em;
     }
 }
 
 .resume, .guideLine {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     @media (min-width: $medium-screen) {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -202,9 +207,10 @@
         font-family: $poppins-italic;
         text-align: center;
         color: $red;
-        line-height: 1.4;
-        font-size: 20px;
+        line-height: 1.6;
+        font-size: 1rem;
         margin: auto;
+        margin-top: 1.5rem;
 
         span {
             display: block;

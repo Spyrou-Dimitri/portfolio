@@ -32,7 +32,7 @@ $current_filter = $taxonomy_filter;
 ?>
 <div class="bg">
     <section class="projectsHome">
-        <h2 class="projectsHome__title">
+        <h2 aria-level="2" class="projectsHome__title">
             <?= get_field('projects-title') ?>
         </h2>
         <div class="projectsHome__container">
@@ -61,12 +61,12 @@ $current_filter = $taxonomy_filter;
 
 
 <section class="projectsList">
-    <h2 class="projectsList__title"><?= __('Tous mes projets'); ?></h2>
+    <h2 aria-level="2" class="projectsList__title"><?= __('Tous mes projets'); ?></h2>
 
     <div class="projectsList__container">
         <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
-            <article class="projectCard" data-animation="appearLeft">
-                <a class="projectCard__link" href="<?= get_the_permalink() ?>"><span
+            <article class="projectCard" itemscope itemtype="https://schema.org/CreativeWork" data-animation="appearLeft">
+                <a itemprop="url" class="projectCard__link" href="<?= get_the_permalink() ?>"><span
                             class="sro">Consulter <?= get_the_title() ?></span></a>
                 <div>
                     <?php
@@ -76,9 +76,10 @@ $current_filter = $taxonomy_filter;
                     <?= get_the_post_thumbnail(null, 'medium', [
                         'class' => 'resizeImg',
                         'alt' => $alt_text,
+                        'itemprop' => 'image',
                         'sizes' => '(min-width: 817px) 350px ,100vw',
                     ]); ?>
-                    <h3 class="projectCard__title"><?= get_the_title() ?></h3>
+                    <h3 aria-level="3" itemprop="name" class="projectCard__title"><?= get_the_title() ?></h3>
                 </div>
             </article>
         <?php endwhile; else: ?>

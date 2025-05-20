@@ -2,29 +2,29 @@
 <?php
 if (have_posts()):while (have_posts()): the_post(); ?>
     <div class="bgProject">
-        <section class="project" data-animation="appear">
-            <h2 class="project__title">
+        <section class="project" data-animation="appear" itemscope itemtype="https://schema.org/CreativeWork">
+            <h2 aria-level="2" class="project__title" itemprop="name">
                 <?= get_field('project-title') ?>
             </h2>
             <a href="#" title="Retour à la page de projets" class="project__comebackLink">Retour aux projets</a>
             <div class="project__containerLinks">
-                <a href="#" title="Retourner à la page de projet" class="ctaPrimary"> <span>Découvrir le site</span></a>
-                <a href="#" title="Découvrir le site" class="ctaSecondary"><span>Projet Github</span></a>
+                <a href="#" title="Retourner à la page de projet" class="ctaPrimary" itemprop="url"> <span>Découvrir le site</span></a>
+                <a href="#" title="Découvrir le site" class="ctaSecondary" itemprop="codeRepository"><span>Projet Github</span></a>
             </div>
         </section>
     </div>
     <section class="resume" data-animation="appear">
         <div class="resume__content">
             <div class="resume__content__desc">
-                <h2 class="resume__content__desc__title">
+                <h2 aria-level="2" class="resume__content__desc__title">
                     <?= get_field('desc-title') ?>
                 </h2>
-                <p class="resume__content__desc__paragraph">
+                <p class="resume__content__desc__paragraph" itemprop="description">
                     <?= get_field('desc-desc') ?>
                 </p>
             </div>
             <div class="resume__content__tools">
-                <h2 class="resume__content__tools__title">
+                <h2 aria-level="2" class="resume__content__tools__title">
                     <?= get_field('tools-title') ?>
                 </h2>
                 <ul class="resume__content__tools__list">
@@ -45,6 +45,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
             <?= get_the_post_thumbnail(null, 'medium', [
                 'class' => 'resizeImg',
                 'alt' => $alt_text,
+                'itemprop' => 'image',
                 'sizes' => '(min-width: 817px) 550px ,100vw',
             ]); ?>
         </div>
@@ -52,7 +53,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
     <div>
         <section class="guideLine" data-animation="appear">
             <div class="guideLine__content">
-                <h2 class="guideLine__content__title">
+                <h2 aria-level="2" class="guideLine__content__title">
                     <?= get_field('directive-title') ?>
                 </h2>
                 <p class="guideLine__content__paragraph">
@@ -73,7 +74,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
         <?php
         if (have_rows("palette-list")): ?>
             <section class="palette" data-animation="appear">
-                <h2 class="palette__title">
+                <h2 aria-level="2" class="palette__title">
                     <?= get_field('palette-title') ?>
                 </h2>
                 <ul class="palette__list">
@@ -93,7 +94,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
         <?php endif; ?>
     </div>
     <section class="projectStep">
-        <h2 class="projectStep__title">
+        <h2 aria-level="2" class="projectStep__title">
             <?= get_field('step') ?>
         </h2>
         <div class="projectStep__container">
@@ -103,7 +104,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
                 <article class="projectStep__container__article">
                     <?php $ball = get_sub_field('step-img'); ?>
                     <img data-animation="appearLeftBall" class="projectStep__container__article__img" src="<?= $ball['url'] ?>" alt="<?= $ball['alt']?>">
-                    <h3 data-animation="appear" class="projectStep__container__article__title">
+                    <h3 aria-level="3" data-animation="appear" class="projectStep__container__article__title">
                         <?= get_sub_field('step-title') ?>
                     </h3>
                     <p data-animation="appear" class="projectStep__container__article__paragraph">
@@ -116,7 +117,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
     </section>
 
 <section class="gallery">
-    <h2 class="gallery__title">
+    <h2 aria-level="2" class="gallery__title">
         <?= get_field('gallery') ?>
     </h2>
     <div class="gallery__container">

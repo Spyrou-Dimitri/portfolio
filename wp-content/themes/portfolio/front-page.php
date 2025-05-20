@@ -13,12 +13,12 @@ get_header();
             </div>
         </div>
         <div class="hero__container" data-animation="appear">
-            <h2 class="hero__title">
+            <h2 aria-level="2" class="hero__title" itemprop="name">
         <span class="hero__title__before">
             Portfolio
         </span>
                 Spyrou Dimitri
-                <span class="hero__title__after">
+                <span itemprop="jobTitle" class="hero__title__after">
             Web développeur
         </span>
             </h2>
@@ -49,8 +49,8 @@ get_header();
     </section>
 </div>
 
-<section class="lastProjects">
-    <h2 class="lastProjects__title">
+<section class="lastProjects" itemprop="knowsAbout" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 aria-level="2" class="lastProjects__title">
         <b>Projets</b><span>à la une</span>
     </h2>
     <div class="lastProjects__container">
@@ -64,7 +64,7 @@ get_header();
         if ($projects->have_posts()): while ($projects->have_posts()):$projects->the_post(); ?>
             <article class="projectCard" data-animation="appearLeft">
                 <a class="projectCard__link" href="<?= get_the_permalink() ?>"><span class="sro">Consulter <?= get_the_title() ?></span></a>
-                <div>
+                <div itemprop="workExample">
                     <?php
                     $thumbnail_id = get_post_thumbnail_id();
                     $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true)
@@ -74,7 +74,7 @@ get_header();
                         'alt' => $alt_text,
                         'sizes' => '(min-width: 817px) 350px ,100vw',
                     ]); ?>
-                    <h3 class="projectCard__title">
+                    <h3 aria-level="3" itemprop="name" class="projectCard__title">
                         <?= get_the_title() ?>
                     </h3>
                 </div>

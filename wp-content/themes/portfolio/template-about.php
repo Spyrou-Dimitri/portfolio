@@ -6,18 +6,17 @@ get_header();
     <section class="about" data-animation="appear">
         <?php if (have_posts()): while (have_posts()):
         the_post(); ?>
-        <h2 class="about__title">
+        <h2 aria-level="2" class="about__title">
             <?= get_field('about-title'); ?>
         </h2>
-        <article class="about__presentation">
+        <article itemprop="description" class="about__presentation">
             <div class="about__presentation__content">
-                <h3 class="about__presentation__content__title">
+                <h3 aria-level="3" class="about__presentation__content__title">
                     <?= get_field('presentation-title'); ?>
                 </h3>
                 <?= get_field('description'); ?>
             </div>
-            <div class="about__presentation__img">
-                <a href="<?= get_field('about-img') ?>"></a>
+            <div class="about__presentation__img" itemprop="image">
                 <?php
                 $about_img = get_field('about-img');;
                 ?>
@@ -31,14 +30,14 @@ get_header();
     </section>
 </div>
     <section class="career">
-        <h2 class="career__title">
+        <h2 aria-level="2" class="career__title">
             Mon parcours
         </h2>
         <div class="career__container">
             <div class="career__container__img">
                 <img src="/wp-content/themes/portfolio/resources/img/ball8.svg" alt="Boule 8 du billard">
             </div>
-            <ul class="career__container__list">
+            <ul class="career__container__list" itemscope itemtype="https://schema.org/EducationalOccupationalCredential" itemprop="hasCredential">
                 <?php if (have_rows('career')) : ?>
                     <?php while (have_rows('career')) : the_row(); ?>
                         <li class="career__container__list__items">
@@ -49,7 +48,7 @@ get_header();
                                          alt="La canne du billard">
                                 </div>
                             </time>
-                            <h3 class="career__container__list__items__title"><?= get_sub_field('course-name') ?></h3>
+                            <h3 aria-level="3" class="career__container__list__items__title" itemprop="credentialCategory"><?= get_sub_field('course-name') ?></h3>
                         </li>
                     <?php endwhile; ?>
                 <?php else : ?>
@@ -61,21 +60,23 @@ get_header();
     </section>
     <div class="bgWayOfWorking">
         <section class="step">
-            <h2 class="step__title">
+            <h2 aria-level="2" class="step__title">
                 <?= get_field("wayOfWorking-title") ?>
             </h2>
             <div class="step__container">
                 <?php if (have_rows('wayOfWorking-list')) : ?>
                     <?php while (have_rows('wayOfWorking-list')) : the_row(); ?>
 
-                        <article class="step__container__article">
+                        <article class="step__container__article" itemscope itemtype="https://schema.org/HowToStep">
                             <img class="step__container__article__img" data-animation="appearLeftBall"
                                  src="<?= get_sub_field('wayOfWorking-ball') ?>"
                                  alt="<?= get_sub_field('ball-alt') ?>">
-                            <h3 class="step__container__article__title"
-                                data-animation="appear"><?= get_sub_field('wayOfWorking-titleStep') ?></h3>
+                            <h3 aria-level="3" class="step__container__article__title"
+                                data-animation="appear"
+                                itemprop="name"><?= get_sub_field('wayOfWorking-titleStep') ?></h3>
                             <p class="step__container__article__paragraph"
-                               data-animation="appear"><?= get_sub_field('wayOfWorking-desc') ?></p>
+                               data-animation="appear"
+                               itemprop="text"><?= get_sub_field('wayOfWorking-desc') ?></p>
                         </article>
 
                     <?php endwhile; ?>
@@ -86,10 +87,10 @@ get_header();
         </section>
     </div>
     <section class="tools">
-        <h2 class="tools__title">
+        <h2 aria-level="2" class="tools__title">
             <?= get_field('tools-title') ?>
         </h2>
-        <ul class="tools__list">
+        <ul class="tools__list" itemprop="knowsAbout">
             <?php if (have_rows('tools-list')): while (have_rows('tools-list')): the_row(); ?>
                 <?php
                 $img = get_sub_field('tool-item');

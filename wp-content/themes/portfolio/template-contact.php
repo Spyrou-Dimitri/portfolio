@@ -9,18 +9,18 @@ $phone = get_option('options_phone');
 ?>
 <div class="bgContact">
     <section class="homeContact">
-        <h2 class="homeContact__title">
+        <h2 aria-level="2" class="homeContact__title">
             <?= get_the_title() ?>
         </h2>
     </section>
 </div>
 <section class="content">
-    <h2 class="content__title sro">
+    <h2 aria-level="2" class="content__title sro">
         Contact
     </h2>
 
     <article class="content__coord">
-        <h3 class="content__coord__title">
+        <h3 aria-level="3" class="content__coord__title">
             <?= get_field('coord-title') ?>
         </h3>
         <p class="content__coord__paragraph">
@@ -42,7 +42,7 @@ $phone = get_option('options_phone');
         </dl>
     </article>
     <article class="content__contact">
-        <h3 class="content__contact__title">
+        <h3 aria-level="3" class="content__contact__title">
             <?= get_field('form-title') ?>
         </h3>
         <p class="content__contact__paragraph">

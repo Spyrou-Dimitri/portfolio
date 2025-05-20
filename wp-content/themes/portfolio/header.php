@@ -7,18 +7,34 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <meta name="author" content="Spyrou Dimitri">
+    <meta name="keywords" content="Spyrou Dimitri, front-end, back-end, full-stack, Verviers, développeur web, portfolio, 3D">
     <link rel="stylesheet" href="<?= pf_asset('css/main.css') ?>">
+
+    <!-- Profil !-->
+    <meta property="profile:first_name" content="Dimitri">
+    <meta property="profile:last_name" content="Spyrou">
+
+    <!-- Open graph !-->
+
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?= get_actual_title_page() ?>">
+    <meta property="og:description" content="<?= get_bloginfo('description') ?>">
+    <meta property="og:url" content="<?= home_url($_SERVER['REQUEST_URI']) ?>">
+    <meta property="og:site_name" content="<?= get_bloginfo('name') ?>">
+
+
     <title><?= get_bloginfo('title') ?></title>
 </head>
-<body>
-<header>
-    <h1 class="sro">
+<body itemscope itemtype="https://schema.org/Person">
+<header role="banner">
+    <h1 class="sro" aria-level="1">
         <?= get_actual_title_page() ?>
     </h1>
     <div class="header__containner">
         <nav class="nav">
-            <h2 class="nav__title sro">
+            <h2 aria-level="2" class="nav__title sro">
                 <?= wp_get_nav_menu_name("header_menu") ?>
             </h2>
             <a class="nav__link" href="<?= home_url() ?>" title="Vers l'accueil">Dim</a>

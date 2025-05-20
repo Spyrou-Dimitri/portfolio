@@ -756,10 +756,16 @@ footer {
   flex-direction: column;
   font-family: "Playfair-bold", Merriweather, serif;
   align-items: center;
-  font-size: 49px;
+  font-size: 3rem;
   gap: 25px;
   color: #5F021F;
   text-align: center;
+  margin-bottom: 0;
+}
+@media (max-width: 400px) {
+  .hero__title {
+    font-size: 2.4rem;
+  }
 }
 @media (min-width: 817px) {
   .hero__title {
@@ -788,9 +794,13 @@ footer {
 .hero__container__cta {
   display: flex;
   justify-content: space-between;
+  gap: 3rem;
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
+}
+.hero__container__cta a {
+  margin: auto;
 }
 .hero .container__botBillards {
   padding: 15px 0;
@@ -964,7 +974,12 @@ footer {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  gap: 10rem;
+  gap: 2rem;
+}
+@media (min-width: 817px) {
+  .about__presentation {
+    gap: 9rem;
+  }
 }
 .about__presentation p {
   margin-bottom: 1.2em;
@@ -1035,7 +1050,12 @@ footer {
 .step__container {
   display: flex;
   flex-direction: column;
-  gap: 4em;
+  gap: 2em;
+}
+@media (min-width: 817px) {
+  .step__container {
+    gap: 4em;
+  }
 }
 .step__container__article {
   padding: 20px 0;
@@ -1127,31 +1147,21 @@ footer {
   background-color: #FFF5E8;
 }
 
-.homeContact {
-  margin: auto;
-  max-width: 1200px;
-  padding: 44px 25px;
-}
 .homeContact__title {
-  font-family: "Playfair-bold", Merriweather, serif;
-  font-weight: 700;
   text-align: center;
-  font-size: 49px;
-  color: #5F021F;
+  font-size: 3rem;
+  margin-bottom: 0;
 }
 
 .content {
-  max-width: 1200px;
-  padding: 44px 25px;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 3rem;
 }
 @media (min-width: 1024px) {
   .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.75fr 1.25fr;
   }
 }
 .content__coord {
@@ -1165,11 +1175,6 @@ footer {
   font-weight: 700;
   font-size: 39px;
 }
-.content__coord__paragraph {
-  font-family: "Poppins-regular", Helvetica, sans-serif;
-  font-size: 19px;
-  line-height: 1.4;
-}
 .content__coord__list {
   display: flex;
   flex-direction: column;
@@ -1182,8 +1187,7 @@ footer {
 }
 .content__coord__list__link {
   font-family: "Poppins-regular", Helvetica, sans-serif;
-  font-size: 19px;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 .content__coord__list__link a {
   text-decoration: underline;
@@ -1199,11 +1203,6 @@ footer {
   font-family: "Playfair-bold", Merriweather, serif;
   font-weight: 700;
   font-size: 39px;
-}
-.content__contact__paragraph {
-  font-family: "Poppins-regular", Helvetica, sans-serif;
-  font-size: 19px;
-  line-height: 1.4;
 }
 .content__contact__form {
   display: flex;
@@ -1223,14 +1222,13 @@ footer {
 }
 .content__contact__form__container label {
   font-family: "Playfair-bold", Merriweather, serif;
-  font-size: 26px;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 .content__contact__form__container input, .content__contact__form__container textarea {
   font-family: "Poppins-regular", Helvetica, sans-serif;
-  font-size: 19px;
   padding: 0.8em 1.1em;
-  border: 2px solid #5F021F;
+  border: 1px solid #5F021F;
   border-radius: 10px;
   color: #5F021F;
 }
@@ -1241,14 +1239,13 @@ footer {
 }
 .content__contact__form__container > div label {
   font-family: "Playfair-bold", Merriweather, serif;
-  font-size: 26px;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 .content__contact__form__container > div input, .content__contact__form__container > div textarea {
   font-family: "Poppins-regular", Helvetica, sans-serif;
-  font-size: 19px;
   padding: 0.8em 1.1em;
-  border: 2px solid #5F021F;
+  border: 1px solid #5F021F;
   border-radius: 10px;
   color: #5F021F;
 }
@@ -1256,7 +1253,9 @@ footer {
   position: relative;
   font-family: "Playfair-bold", Merriweather, serif;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.2rem;
+  width: 50%;
+  margin: auto;
   padding: 0.8em 1.1em;
   border-radius: 10px;
   border: 2px solid #5F021F;
@@ -1264,6 +1263,11 @@ footer {
   cursor: pointer;
   overflow: hidden;
   color: white;
+}
+@media (min-width: 817px) {
+  .content__contact__form button {
+    width: 30%;
+  }
 }
 .content__contact__form button:hover {
   animation: 0.2s ease-in-out;
@@ -1329,10 +1333,17 @@ footer {
 }
 .project__containerLinks {
   display: flex;
-  gap: 5rem;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 3em;
 }
 
+.resume, .guideLine {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 @media (min-width: 817px) {
   .resume, .guideLine {
     display: grid;
@@ -1449,9 +1460,10 @@ footer {
   font-family: "Poppins-italic", Helvetica, sans-serif;
   text-align: center;
   color: #5F021F;
-  line-height: 1.4;
-  font-size: 20px;
+  line-height: 1.6;
+  font-size: 1rem;
   margin: auto;
+  margin-top: 1.5rem;
 }
 .palette__paragraph span {
   display: block;
@@ -1472,7 +1484,12 @@ footer {
 .projectStep__container {
   display: flex;
   flex-direction: column;
-  gap: 4em;
+  gap: 2em;
+}
+@media (min-width: 817px) {
+  .projectStep__container {
+    gap: 4em;
+  }
 }
 .projectStep__container__article {
   padding: 20px 0;
