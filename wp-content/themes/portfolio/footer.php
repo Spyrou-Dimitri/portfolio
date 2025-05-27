@@ -56,6 +56,7 @@
         </div>
     </section>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
 <script type="module" src="<?= pf_asset('js/main.js') ?>" defer></script>
 </body>
 

@@ -8,8 +8,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Spyrou Dimitri">
-    <meta name="keywords" content="Spyrou Dimitri, front-end, back-end, full-stack, Verviers, développeur web, portfolio, 3D">
+    <meta name="keywords"
+          content="Spyrou Dimitri, front-end, back-end, full-stack, Verviers, développeur web, portfolio, 3D">
     <link rel="stylesheet" href="<?= pf_asset('css/main.css') ?>">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css"
+    />
 
     <!-- Profil !-->
     <meta property="profile:first_name" content="Dimitri">
@@ -46,9 +51,12 @@
                 <span class="burger__wrapper__lines down"></span>
             </div>
             <ul class="nav__container">
-                <?php foreach (pf_get_navigation_links('header_menu') as $link): ?>
+                <?php foreach (pf_get_navigation_links('header_menu') as $link):
+                    $is_active = ($_SERVER['REQUEST_URI'] == parse_url($link->url, PHP_URL_PATH)) ? 'active_page' : ''; ?>
+
+
                     <li class="nav__container__items">
-                        <a href="<?= $link->url ?>" class="nav__container__items__link"
+                        <a  href="<?= $link->url ?>" class="nav__container__items__link <?= $is_active ?>"
                            title="Vers la page <?= $link->label ?>"><?= $link->label ?></a>
                     </li>
                 <?php endforeach; ?>

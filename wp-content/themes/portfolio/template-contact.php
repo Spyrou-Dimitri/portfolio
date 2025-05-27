@@ -15,6 +15,7 @@ $phone = get_option('options_phone');
     </section>
 </div>
 <section class="content">
+
     <h2 aria-level="2" class="content__title sro">
         Contact
     </h2>
@@ -45,24 +46,49 @@ $phone = get_option('options_phone');
         <h3 aria-level="3" class="content__contact__title">
             <?= get_field('form-title') ?>
         </h3>
+        <?php
+        $errors = $_SESSION['contact_form_errors'] ?? [];
+        unset($_SESSION['contact_form_errors']);
+        $success = $_SESSION['contact_form_success'] ?? false;
+        unset($_SESSION['contact_form_success']);
+        ?>
+        <?php if($success): ?>
+            <div class="contact__success">
+                <p><?= $success; ?></p>
+            </div>
+        <?php else: ?>
         <p class="content__contact__paragraph">
             <?= get_field('form-desc') ?>
         </p>
-        <form action="#" method="post" class="content__contact__form">
+
+
+
+
+        <form action="<?= admin_url('admin-post.php'); ?>" method="post" class="content__contact__form">
             <div class="content__contact__form__container lastName-FirstName">
                 <div class="lastName">
-                    <label for="lastName">Nom (*)</label>
-                    <input type="text" name="lastName" id="lastName" placeholder="Copeau">
+                    <label for="lastname">Nom (*)</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Copeau">
+                    <?php if(isset($errors['lastname'])): ?>
+                        <p class="field__error"><?= $errors['lastname']; ?></p>
+                    <?php endif; ?>
                 </div>
                 <div class="firstName">
-                    <label for="firstName">Prénom (*)</label>
-                    <input type="text" id="firstName" name="firstName" placeholder="Anthony">
+                    <label for="firstname">Prénom (*)</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Anthony">
+                    <?php if(isset($errors['firstname'])): ?>
+                        <p class="field__error"><?= $errors['firstname']; ?></p>
+                    <?php endif; ?>
                 </div>
+
             </div>
             <div class="content__contact__form__container email-tel">
                 <div class="email">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="anthony.copeau@hotmail.com">
+                    <?php if(isset($errors['email'])): ?>
+                        <p class="field__error"><?= $errors['email']; ?></p>
+                    <?php endif; ?>
                 </div>
                 <div class="tel">
                     <label for="phone">Téléphone</label>
@@ -76,9 +102,14 @@ $phone = get_option('options_phone');
             <div class="content__contact__form__container">
                 <label for="message">Message (*)</label>
                 <textarea name="message" id="message" rows="10" placeholder="Ex. Bonjour je souhaite vous parler d'un projet"></textarea>
+                <?php if(isset($errors['message'])): ?>
+                    <p class="field__error"><?= $errors['message']; ?></p>
+                <?php endif; ?>
             </div>
+            <input type="hidden" name="action" value="dw_submit_contact_form">
             <button class="button" type="submit" name="submit"><span>Envoyer !</span></button>
         </form>
+        <?php endif; ?>
 
     </article>
 </section>

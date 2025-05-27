@@ -128,7 +128,7 @@ if (have_posts()):while (have_posts()): the_post(); ?>
             $gallery = get_sub_field('gallery_item');
 
             ?>
-        <a target="_blank" class="gallery__container__item" href="<?= $gallery['url'] ?>" data-fancybox="gallery>">
+        <a class="gallery__container__item" href="<?= $gallery['url'] ?>" data-fancybox="gallery">
 
             <?= responsive_image($gallery, [
                 'lazy' => 'eager',

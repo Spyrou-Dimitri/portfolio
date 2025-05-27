@@ -41,3 +41,7 @@ p {
     line-height: 1.6;
     color: $red;
 }
+.nav__container__items__link.active_page {
+    color: $bg;
+    background-color: $red;
+}
