@@ -64,7 +64,10 @@ $current_filter = $taxonomy_filter;
     <h2 aria-level="2" class="projectsList__title"><?= __('Tous mes projets'); ?></h2>
 
     <div class="projectsList__container">
-        <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
+
+        <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post();
+
+        ?>
             <article class="projectCard" itemscope itemtype="https://schema.org/CreativeWork" data-animation="appearLeft">
                 <a itemprop="url" class="projectCard__link" href="<?= get_the_permalink() ?>"><span
                             class="sro">Consulter <?= get_the_title() ?></span></a>

@@ -103,7 +103,7 @@
                     .cueCareer {
                         display: flex;
                         position: absolute;
-                        top: 50%;
+                        top: 40%;
                         left: 130px;
                         min-height: 100px;
                         img {
@@ -118,16 +118,18 @@
 
                     .ballCareer {
                         position: absolute;
-                        top: 0;
+                        top: 8px;
                         left: 20px;
                         width: 100px; height: auto;
                     }
 
                     &__date {
                         display: block;
-                        margin-bottom: 3rem;
+                        padding-top: 6rem;
+                        line-height: 1.6;
                     }
                     &__title {
+                        font-family: $playfair-bold;
 
                     }
                 }
