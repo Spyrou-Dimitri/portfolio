@@ -1,7 +1,9 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+add_action('init', function () {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+}, 1);
 
 
 // Désactiver l'éditeur de texte Gutenberg de Wordpress :
@@ -58,6 +60,7 @@ register_post_type('projects', [
     'label' => 'Projets',
     'description' => 'Les projets que j ai réalisé',
     'menu_position' => 5,
+    'has_archive' => true,
     'menu_icon' => 'dashicons-airplane',
     'public' => true,
     'rewrite' => [
@@ -242,6 +245,9 @@ function dw_handle_contact_form()
 
     return $form->handle($_POST);
 }
+
+session_write_close();
+
 
 
 

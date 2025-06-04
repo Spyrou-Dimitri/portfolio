@@ -1018,6 +1018,7 @@ footer {
 }
 
 .career__container__list {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 250px;
@@ -1320,6 +1321,11 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+.content__contact__form .field__error {
+  color: red;
+  font-family: "Poppins-regular", Helvetica, sans-serif;
+  font-weight: 700;
 }
 @media (min-width: 817px) {
   .content__contact__form .lastName-FirstName, .content__contact__form .email-tel {

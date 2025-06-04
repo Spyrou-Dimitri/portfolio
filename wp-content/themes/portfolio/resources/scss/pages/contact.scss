@@ -23,9 +23,10 @@
     }
 
 
+
     &__coord{
 
-        
+
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -64,6 +65,7 @@
         flex-direction: column;
         gap: 20px;
         color: $red;
+
         &__title {
             font-family: $playfair-bold;
             font-weight: 700;
@@ -71,9 +73,15 @@
         }
 
         &__form {
+
             display: flex;
             flex-direction: column;
             gap: 30px;
+            .field__error {
+                color: red;
+                font-family: $poppins-regular;
+                font-weight: 700;
+            }
             & .lastName-FirstName, & .email-tel {
                 @media (min-width: $medium-screen) {
                     display: grid;

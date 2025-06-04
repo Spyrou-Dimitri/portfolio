@@ -26,9 +26,9 @@ get_header();
                 "Coder, c’est comme jouer au billard : précision, stratégie et un bon rebond pour atteindre la cible&nbsp;!"
             </p>
             <div class="hero__container__cta">
-                <a class="ctaPrimary" href="<?= get_the_permalink('about') ?>" title=""><span>Me
+                <a class="ctaPrimary" href="/about" title="Découvrir la page à propos"><span>Me
             découvrir</span></a>
-                <a class="ctaSecondary" href="" title=""><span>
+                <a class="ctaSecondary" href="/projets" title="Découvrir tous mes projets"><span>
                 Mes projets
             </span></a>
             </div>

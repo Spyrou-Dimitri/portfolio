@@ -58,14 +58,13 @@
 }
 .career {
 
-
-
     &__title {
 
     }
     &__container {
 
         &__list {
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             gap: 250px;
