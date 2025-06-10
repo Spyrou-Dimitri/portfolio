@@ -699,16 +699,16 @@ footer {
     transform: translateX(200vw) rotate(0);
   }
   25% {
-    transform: translateX(0) rotate(-1100deg);
+    transform: translateX(0) rotate(-2190deg);
   }
   50% {
-    transform: translateX(20px) rotate(-1080deg);
+    transform: translateX(20px) rotate(-2160deg);
   }
   71% {
-    transform: translateX(20px) rotate(-1080deg);
+    transform: translateX(20px) rotate(-2160deg);
   }
   100% {
-    transform: translateX(-300vw) rotate(-1300deg);
+    transform: translateX(-300vw) rotate(0deg);
   }
 }
 .hero .container__topBillards__cue {
@@ -719,10 +719,10 @@ footer {
 }
 @keyframes topCue {
   0% {
-    transform: translateX(400vw);
+    transform: translateX(200%);
   }
   30% {
-    transform: translateX(200vw);
+    transform: translateX(200%);
   }
   50% {
     transform: translateX(20px);
@@ -743,7 +743,7 @@ footer {
     transform: translateX(60px);
   }
   100% {
-    transform: translateX(-100vw);
+    transform: translateX(-200%);
   }
 }
 .hero .container__topBillards__cue img {
@@ -824,19 +824,19 @@ footer {
 }
 @keyframes ballBot {
   0% {
-    transform: translateX(-400vw) rotate(0);
+    transform: translateX(-200vw) rotate(0);
   }
   25% {
-    transform: translateX(0) rotate(1100deg);
+    transform: translateX(0) rotate(2190deg);
   }
   50% {
-    transform: translateX(-20px) rotate(1080deg);
+    transform: translateX(-20px) rotate(2160deg);
   }
   71% {
-    transform: translateX(-20px) rotate(1080deg);
+    transform: translateX(-20px) rotate(2160deg);
   }
   100% {
-    transform: translateX(300vw) rotate(1300deg);
+    transform: translateX(300vw) rotate(0deg);
   }
 }
 .hero .container__botBillards__cue {
@@ -847,10 +847,10 @@ footer {
 }
 @keyframes botCue {
   0% {
-    transform: translateX(-200vw);
+    transform: translateX(-200%);
   }
   30% {
-    transform: translateX(-200vw);
+    transform: translateX(-200%);
   }
   50% {
     transform: translateX(-20px);
@@ -871,7 +871,7 @@ footer {
     transform: translateX(-60px);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateX(200%);
   }
 }
 .hero .container__botBillards__cue img {

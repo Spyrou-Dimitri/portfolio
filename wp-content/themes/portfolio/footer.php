@@ -11,7 +11,7 @@
             <p>
                 Dans ce cas, prenez contact avec moi via le bouton ci-dessous !
             </p>
-            <a href="#" title="Vers la page de contact" hreflang="fr" class="ctaPrimary"><span>Contactez-moi</span></a>
+            <a href="/contact" title="Vers la page de contact" hreflang="fr" class="ctaPrimary"><span>Contactez-moi</span></a>
         </div>
         <nav class="footer__container__section secondNav">
             <h3 class="footer__container__section__title">

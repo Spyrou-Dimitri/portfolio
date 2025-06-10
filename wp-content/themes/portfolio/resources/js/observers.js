@@ -62,7 +62,7 @@ export const observers = {
         })
 
         this.appearObserver = new IntersectionObserver(this.appearAnimate, {threshold: 0.5});
-        this.appearLeftObserver = new IntersectionObserver(this.appearLeftAnimate, {threshold: 0.5});
+        this.appearLeftObserver = new IntersectionObserver(this.appearLeftAnimate, {threshold: 0.1});
         this.appearLeftBallObserver = new IntersectionObserver(this.appearLeftBallAnimate, {threshold: 0.5});
         this.observerAction()
     },

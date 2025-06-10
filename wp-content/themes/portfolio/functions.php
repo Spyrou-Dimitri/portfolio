@@ -60,9 +60,9 @@ register_post_type('projects', [
     'label' => 'Projets',
     'description' => 'Les projets que j ai réalisé',
     'menu_position' => 5,
-    'has_archive' => true,
     'menu_icon' => 'dashicons-airplane',
     'public' => true,
+    'has_archive' => true,
     'rewrite' => [
         'slug' => 'projets',
     ],
@@ -245,6 +245,16 @@ function dw_handle_contact_form()
 
     return $form->handle($_POST);
 }
+
+function portfolio_session_flash(string $key, mixed $value): void
+{
+    if (!isset($_SESSION['portfolio_flash'])) {
+        $_SESSION['portfolio_flash'] = [];
+    }
+
+    $_SESSION['portfolio_flash'][$key] = $value;
+}
+
 
 session_write_close();
 

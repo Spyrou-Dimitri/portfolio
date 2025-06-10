@@ -11,9 +11,10 @@
     <meta name="keywords"
           content="Spyrou Dimitri, front-end, back-end, full-stack, Verviers, développeur web, portfolio, 3D">
     <link rel="stylesheet" href="<?= pf_asset('css/main.css') ?>">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css"
+            href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
 
     <!-- Profil !-->
