@@ -2,7 +2,7 @@
 <footer>
     <section class="footer__container">
         <h2 class="sro">
-            Pieds de pagex
+            Pieds de pages
         </h2>
         <div class="footer__container__section contact">
             <h3 class="footer__container__section__title">
@@ -55,6 +55,7 @@
             </ul>
         </div>
     </section>
+
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
 <script type="module" src="<?= pf_asset('js/main.js') ?>" defer></script>

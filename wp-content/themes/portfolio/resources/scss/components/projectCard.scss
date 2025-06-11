@@ -12,6 +12,7 @@
     }
 
     img {
+        aspect-ratio: 4 / 4;
         border: 5px solid #5F021F;
         border-radius: 50%;
         transform: rotate3d(1, -1, 0, calc(var(--i, 1) * 8deg));

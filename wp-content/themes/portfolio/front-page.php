@@ -17,7 +17,7 @@ get_header();
         <span class="hero__title__before">
             Portfolio
         </span>
-                Spyrou Dimitri
+                Dimitri Spyrou
                 <span itemprop="jobTitle" class="hero__title__after">
             Web développeur
         </span>

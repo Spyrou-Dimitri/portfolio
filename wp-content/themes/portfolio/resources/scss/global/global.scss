@@ -21,6 +21,7 @@ a {
 main {
 }
 body {
+    position: relative;
     overflow-x: hidden;
 }
 section {
@@ -45,4 +46,21 @@ p {
     color: $bg;
     background-color: $red;
 }
+
+.skip {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    z-index: 10000;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
+    background-color: $red;
+    &:focus {
+        left: 0;
+    }
+}
+
 

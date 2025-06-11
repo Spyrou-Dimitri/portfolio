@@ -9,12 +9,25 @@ the_post(); ?>
         </h2>
         <a href="<?= get_post_type_archive_link('projects') ?>" title="Retour à la page de projets"
            class="project__comebackLink">Retour aux projets</a>
-        <div class="project__containerLinks">
-            <a href="<?= get_field('website-url') ?>" title="Retourner à la page de projet" class="ctaPrimary"
-               itemprop="url"> <span>Découvrir le site</span></a>
-            <a href="<?= get_field('github_url') ?>" title="Découvrir le site" class="ctaSecondary"
-               itemprop="codeRepository"><span>Projet Github</span></a>
-        </div>
+        <?php
+        $buttonUrl = get_field('website-url');
+        $buttonGithub = get_field('github_url');
+
+        if ($buttonUrl || $buttonGithub): ?>
+            <div class="project__containerLinks">
+                <?php if ($buttonUrl): ?>
+                    <a href="<?= esc_url($buttonUrl) ?>" title="Retourner à la page de projet" class="ctaPrimary" itemprop="url">
+                        <span>Découvrir le site</span>
+                    </a>
+                <?php endif; ?>
+
+                <?php if ($buttonGithub): ?>
+                    <a href="<?= esc_url($buttonGithub) ?>" title="Découvrir le site" class="ctaSecondary" itemprop="codeRepository">
+                        <span>Projet Github</span>
+                    </a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
     </section>
 </div>
 <section class="resume" data-animation="appear">

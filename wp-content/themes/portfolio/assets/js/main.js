@@ -516,7 +516,7 @@ var observers = {
       threshold: 0
     });
     this.appearObserver = new IntersectionObserver(this.appearAnimate, {
-      threshold: 0.5
+      threshold: 0.2
     });
     this.appearLeftObserver = new IntersectionObserver(this.appearLeftAnimate, {
       threshold: 0.1

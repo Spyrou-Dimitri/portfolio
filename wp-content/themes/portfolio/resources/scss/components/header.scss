@@ -32,12 +32,15 @@ main {
     }
 
     &__link {
-        position: relative;
-        font-family: $playfair-regular;
-        font-weight: 700;
-        color: $red;
-        font-size: 1.8rem;
-        z-index: 2;
+        line-height: 0;
+        img {
+            width: 40px;
+            height: 40px;
+            @media (min-width: $medium-screen) {
+                height: 80px;
+                width: 80px;
+            }
+        }
     }
     #burger__button {
         z-index: 2;

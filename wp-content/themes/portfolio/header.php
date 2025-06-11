@@ -8,6 +8,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Spyrou Dimitri">
+    <meta name="description" content="<?= get_bloginfo('description') ?>">
     <meta name="keywords"
           content="Spyrou Dimitri, front-end, back-end, full-stack, Verviers, développeur web, portfolio, 3D">
     <link rel="stylesheet" href="<?= pf_asset('css/main.css') ?>">
@@ -34,6 +35,7 @@
     <title><?= get_bloginfo('title') ?></title>
 </head>
 <body itemscope itemtype="https://schema.org/Person">
+<a class="skip" href="#content" title="Accédez au contenu principal">Accédez au contenu principal</a>
 <header role="banner">
     <h1 class="sro" aria-level="1">
         <?= get_actual_title_page() ?>
@@ -43,7 +45,8 @@
             <h2 aria-level="2" class="nav__title sro">
                 <?= wp_get_nav_menu_name("header_menu") ?>
             </h2>
-            <a class="nav__link" href="<?= home_url() ?>" title="Vers l'accueil">Dim</a>
+            
+            <a class="nav__link" href="<?= home_url() ?>" title="Vers l'accueil"><img src="/wp-content/themes/portfolio/resources/img/logo.svg" alt="Logo de Dimitri Spyrou"></a>
             <input type="checkbox" name="burger" id="burger__button">
             <label for="burger__button" class="sro">Menu dépliant</label>
             <div class="burger__wrapper">
@@ -68,7 +71,7 @@
     </div>
 
 </header>
-<main>
+<main id="#content">
 
 
 

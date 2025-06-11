@@ -92,6 +92,7 @@ a {
 }
 
 body {
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -119,6 +120,22 @@ p {
 .nav__container__items__link.active_page {
   color: #FFF5E8;
   background-color: #5F021F;
+}
+
+.skip {
+  position: absolute;
+  top: 0;
+  left: -10000px;
+  z-index: 10000;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: white;
+  background-color: #5F021F;
+}
+.skip:focus {
+  left: 0;
 }
 
 .ctaPrimary, .ctaTag, .ctaSecondary {
@@ -385,6 +402,7 @@ p {
   transform: translate(-50%, -50%) scale(1.1);
 }
 .projectCard img {
+  aspect-ratio: 4/4;
   border: 5px solid #5F021F;
   border-radius: 50%;
   transform: rotate3d(1, -1, 0, calc(var(--i, 1) * 8deg));
@@ -452,12 +470,17 @@ main {
   }
 }
 .nav__link {
-  position: relative;
-  font-family: "Playfair-regular", Merriweather, serif;
-  font-weight: 700;
-  color: #5F021F;
-  font-size: 1.8rem;
-  z-index: 2;
+  line-height: 0;
+}
+.nav__link img {
+  width: 40px;
+  height: 40px;
+}
+@media (min-width: 817px) {
+  .nav__link img {
+    height: 80px;
+    width: 80px;
+  }
 }
 .nav #burger__button {
   z-index: 2;
@@ -1051,7 +1074,7 @@ footer {
   transform: translateY(-50%);
 }
 .career__container__list__items__content .cueCareer img {
-  width: 67.5rem;
+  width: 66.5rem;
   height: auto;
 }
 .career__container__list__items__content .ballCareer {
@@ -1488,6 +1511,7 @@ footer {
   gap: 20px;
 }
 .resume__img img, .guideLine__img img {
+  aspect-ratio: 4/4;
   border-radius: 50%;
 }
 
