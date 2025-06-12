@@ -67,11 +67,11 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 250px;
+            gap: 15.625rem;
 
             &__items {
 
-                font-size: 24px;
+                font-size: 1.5rem;
                 text-align: right;
                 &:nth-child(even) {
                     text-align: left;

@@ -158,6 +158,12 @@ the_post(); ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
         </div>
+        <?php
+        $buttonFigma = get_field('figma_url');
+
+        if ($buttonFigma): ?>
+        <a class="maquette_url" href="<?= $buttonFigma ?>" title="Voir la maquette de ce projet" target="_blank"><span>Maquette</span></a>
+        <?php endif;?>
     </section>
 
 <?php endwhile;?>
