@@ -102,11 +102,15 @@ section {
   padding: 4rem 1.5rem;
 }
 
+strong {
+  font-weight: bold;
+}
+
 h2 {
   font-family: "Playfair-bold", Merriweather, serif;
   font-size: 2.375rem;
-  font-weight: 700;
   color: #5F021F;
+  font-weight: 700;
   margin-bottom: 3rem;
 }
 
@@ -449,7 +453,7 @@ main {
 
 .header__containner {
   background-color: #FFF5E8;
-  padding-top: 22px;
+  padding: 1.5rem;
 }
 
 .nav {
@@ -948,10 +952,9 @@ footer {
 }
 
 .lastProjects__title {
-  font-family: "Playfair-bold", Merriweather, serif;
-  font-size: 2.375rem;
-  font-weight: 700;
-  color: #5F021F;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 .lastProjects__title span {
   display: block;
@@ -1692,10 +1695,17 @@ footer {
 }
 
 .gallery__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+@media (min-width: 817px) {
+  .gallery__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;
+  }
 }
 .gallery__container__item img {
   width: 100%;

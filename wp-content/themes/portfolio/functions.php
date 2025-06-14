@@ -62,7 +62,7 @@ register_post_type('projects', [
     'menu_position' => 5,
     'menu_icon' => 'dashicons-airplane',
     'public' => true,
-    'has_archive' => true,
+    'has_archive' => false,
     'rewrite' => [
         'slug' => 'projets',
     ],
@@ -191,6 +191,13 @@ function responsive_image($image, $settings): bool|string
     <?php
     return ob_get_clean();
 }
+
+function init_remove_support(): void {
+    remove_post_type_support( 'projects', 'editor' );
+    remove_post_type_support( 'page', 'editor' );
+}
+
+add_action( 'init', 'init_remove_support', 100 );
 
 function get_actual_title_page()
 {

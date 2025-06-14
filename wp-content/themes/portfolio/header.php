@@ -8,9 +8,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Spyrou Dimitri">
+
     <meta name="description" content="<?= get_bloginfo('description') ?>">
     <meta name="keywords"
           content="Spyrou Dimitri, front-end, back-end, full-stack, Verviers, développeur web, portfolio, 3D">
+
+    <link rel="icon" href="/wp-content/themes/portfolio/resources/img/logo.svg">
     <link rel="stylesheet" href="<?= pf_asset('css/main.css') ?>">
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link

@@ -231,10 +231,17 @@
 }
 .gallery {
     &__container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        @media (min-width: $medium-screen) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 2rem;
+        }
+
         &__item {
             img {
                 width: 100%;

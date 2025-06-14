@@ -9,7 +9,7 @@ get_header();
                      height="100">
             </div>
             <div class="container__topBillards__cue">
-                <img src="/wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard">
+                <img src="/wp-content/themes/portfolio/resources/img/cue.svg" alt="La canne du billard" >
             </div>
         </div>
         <div class="hero__container" data-animation="appear">
@@ -51,7 +51,7 @@ get_header();
 
 <section class="lastProjects" itemprop="knowsAbout" itemscope itemtype="https://schema.org/CreativeWork">
     <h2 aria-level="2" class="lastProjects__title">
-        <b>Projets</b><span>à la une</span>
+        <strong>Projets</strong><span>à la une</span>
     </h2>
     <div class="lastProjects__container">
         <?php

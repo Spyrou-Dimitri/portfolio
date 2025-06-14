@@ -36,7 +36,7 @@ $current_filter = $taxonomy_filter;
             <?= get_field('projects-title') ?>
         </h2>
         <div class="projectsHome__container">
-            <a href="<?= get_permalink(); ?>"
+            <a href="<?= get_post_type_archive_link('projects'); ?>"
                class="<?= ($current_filter === '') ? 'is_active ctaTagNoHoverable' : 'ctaTag '; ?>">
                 <span>
                 <?= __('Tout'); ?>
@@ -46,7 +46,7 @@ $current_filter = $taxonomy_filter;
 
             <?php foreach ($terms as $term): ?>
                 <?php $is_active = ($current_filter === $term->slug) ? 'is_active ctaTagNoHoverable' : 'ctaTag'; ?>
-                <a href="<?= get_permalink() . '?filter=' . $term->slug; ?>"
+                <a href="<?= get_post_type_archive_link('projects') . '?filter=' . $term->slug; ?>"
                    class="<?= $is_active; ?>">
                     <span>
                     <?= esc_html($term->name); ?>
@@ -67,8 +67,9 @@ $current_filter = $taxonomy_filter;
 
         <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post();
 
-        ?>
-            <article class="projectCard" itemscope itemtype="https://schema.org/CreativeWork" data-animation="appearLeft">
+            ?>
+            <article class="projectCard" itemscope itemtype="https://schema.org/CreativeWork"
+                     data-animation="appearLeft">
                 <a itemprop="url" class="projectCard__link" href="<?= get_the_permalink() ?>"><span
                             class="sro">Consulter <?= get_the_title() ?></span></a>
                 <div>
