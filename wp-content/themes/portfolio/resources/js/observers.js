@@ -183,7 +183,3 @@ export const observers = {
 
 }
 
-/*
-root: null,
-            rootMargin: "-25% 0px -75% 0px",
- */

@@ -105,10 +105,6 @@ the_post(); ?>
                     </li>
                 <?php endwhile; ?>
             </ul>
-            <p class="palette__paragraph">
-                La couleur vous plait ?
-                <span>Cliquez dessus pour l’obtenir !</span>
-            </p>
         </section>
     <?php endif; ?>
 </div>
